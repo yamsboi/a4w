@@ -1,5 +1,5 @@
 @import "variables";
-$hamburger-size: 50px;
+$hamburger-size: 60px;
 
 nav {
   ul {
@@ -32,9 +32,16 @@ nav {
       }
     }
   }
+
+  * {
+    &::selection {
+      color: white;
+    }
+  }
 }
 
 .hamburger {
+  color: white;
   z-index: 9999;
   top: 0;
   position: fixed;
@@ -44,4 +51,9 @@ nav {
   background-color: $primary;
   height: $hamburger-size;
   width: $hamburger-size;
+  border-radius: 0 0 20px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

@@ -7,7 +7,12 @@ function Card(props) {
   return (
     <div className="card-container">
       <div className="top">
-        <Typography type="h1"> {props.title} </Typography>
+        <Typography
+          type="h1"
+          style={{ backgroundColor: props.bg, color: props.text }}
+        >
+          {props.title}
+        </Typography>
         <div className="img">
           <img src={props.img} alt={props.alt} />
         </div>
