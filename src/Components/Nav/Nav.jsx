@@ -18,7 +18,11 @@ function Nav() {
     <nav>
       <Hamburger state={state} toggleState={toggle} />
 
-      {state ? (
+      <div
+        className={
+          "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
+        }
+      >
         <ul>
           <li>
             <Link onClick={closeMenu} to="/">
@@ -36,7 +40,7 @@ function Nav() {
             </Link>
           </li>
         </ul>
-      ) : null}
+      </div>
     </nav>
   );
 }

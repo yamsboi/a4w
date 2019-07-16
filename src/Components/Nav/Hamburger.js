@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Hamburger = props => {
   return (
@@ -9,3 +10,8 @@ const Hamburger = props => {
 };
 
 export default Hamburger;
+
+Hamburger.propTypes = {
+  state: PropTypes.bool,
+  toggleState: PropTypes.func
+};

@@ -13,14 +13,22 @@ function Card(props) {
         >
           {props.title}
         </Typography>
+
         <div className="img">
-          <img src={props.img} alt={props.alt} />
+          <img className="" src={props.img} alt={props.alt} />
+        </div>
+      </div>
+
+      <div className="middle">
+        <div className="hej">
+          <Typography className="h3" type="h3">
+            Subtitle
+          </Typography>
         </div>
       </div>
 
       <div className="bottom">
         <div className="body">
-          <Typography type="h3"> Subtitle </Typography>
           <p>{props.children}</p>
         </div>
       </div>
