@@ -16,6 +16,7 @@
     position: absolute;
     margin: 0;
     transform: translate(-20%, -70%);
+    z-index: 100;
   }
   .top {
     display: flex;
@@ -23,36 +24,40 @@
     width: 100%;
     height: 500px;
     .img {
+      position: relative;
       width: inherit;
       height: 100%;
-      text-align: center;
       overflow: hidden;
+      background: red;
       img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 100%;
+        height: 100%;
       }
     }
   }
 
   .middle {
     width: 100%;
-    // transform: rotate(270deg);
-    // transform-origin: bottom left;
-    background: red;
+
     h3 {
       margin: 0;
       bottom: 300px;
       position: absolute;
       transform: rotate(270deg);
       transform-origin: bottom left;
-      // margin: 0;
-      // font-size: 40px;
-      // bottom: 19.5%;
+      font-size: 30px;
+      color: rgb(65, 5, 5);
     }
   }
 
   .bottom {
   }
   p {
-    color: $test;
+    color: rgb(99, 99, 99);
     // padding: 0 20px;
   }
 }

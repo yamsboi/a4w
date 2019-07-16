@@ -20,11 +20,9 @@ function Card(props) {
       </div>
 
       <div className="middle">
-        <div className="hej">
-          <Typography className="h3" type="h3">
-            Subtitle
-          </Typography>
-        </div>
+        <Typography className="h3" type="h3">
+          {props.subtitle}
+        </Typography>
       </div>
 
       <div className="bottom">

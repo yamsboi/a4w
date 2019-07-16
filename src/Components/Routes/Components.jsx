@@ -22,6 +22,7 @@ function Components() {
         img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         title="Professionalism"
         alt="Placeholder"
+        subtitle="Modern"
       >
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -33,9 +34,10 @@ function Components() {
       </Card>
 
       <Card
-        img="https://images.pexels.com/photos/936229/pexels-photo-936229.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        img="https://images.pexels.com/photos/1036642/pexels-photo-1036642.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
         title="Professionalism"
         alt="Placeholder"
+        subtitle="Modern"
       >
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
