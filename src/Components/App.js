@@ -5,8 +5,7 @@ import "./App.css";
 import Index from "./Routes/Index";
 import About from "./Routes/About";
 import Components from "./Routes/Components";
-
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
 import Typography from "./Typography";
 
 function App() {
@@ -15,9 +14,12 @@ function App() {
       <Router>
         <div>
           <Nav />
-          <Route path="/" exact component={Index} />
-          <Route path="/about/" component={About} />
-          <Route path="/components/" component={Components} />
+
+          <section className="content">
+            <Route path="/" exact component={Index} />
+            <Route path="/about/" component={About} />
+            <Route path="/components/" component={Components} />
+          </section>
         </div>
       </Router>
     </div>

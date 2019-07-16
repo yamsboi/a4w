@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./style/typography.scss";
 
-function Typography(props) {
+const Typography = props => {
   const DynamicTag = `${props.type}`;
 
-  return props.type === "a" ? (
-    <DynamicTag href={props.href}>{props.children}</DynamicTag>
-  ) : (
-    <DynamicTag>{props.children}</DynamicTag>
+  return (
+    <DynamicTag className={props.className} style={props.style}>
+      {props.children}
+    </DynamicTag>
   );
-}
+};
 
 export default Typography;
 

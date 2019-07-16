@@ -1,0 +1,47 @@
+@import "variables";
+$hamburger-size: 50px;
+
+nav {
+  ul {
+    top: 0;
+    z-index: 9000;
+    position: fixed;
+    padding-top: $hamburger-size;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 164, 164);
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-flex;
+
+      // Nav Links
+      a {
+        text-decoration: none;
+        padding: 20px;
+        color: white;
+        font-size: 54px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.hamburger {
+  z-index: 9999;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary;
+  height: $hamburger-size;
+  width: $hamburger-size;
+}
