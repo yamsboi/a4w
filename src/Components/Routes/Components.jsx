@@ -34,10 +34,10 @@ function Components() {
       </Card>
 
       <Card
-        img="https://images.pexels.com/photos/1036642/pexels-photo-1036642.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-        title="Professionalism"
+        img="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        title="Futuristic"
         alt="Placeholder"
-        subtitle="Modern"
+        subtitle="Artistic"
       >
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
