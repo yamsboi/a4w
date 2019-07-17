@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { render } from "react-dom";
 import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
 import "./../style/nav.scss";
