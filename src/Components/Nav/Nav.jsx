@@ -22,25 +22,25 @@ function Nav() {
         className={
           "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
         }
-      >
-        <ul>
-          <li>
-            <Link onClick={closeMenu} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link onClick={closeMenu} to="/about/">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link onClick={closeMenu} to="/components/">
-              Components
-            </Link>
-          </li>
-        </ul>
-      </div>
+      />
+
+      <ul className={state ? "menu_ul_visible" : "menu_ul_hidden"}>
+        <li>
+          <Link onClick={closeMenu} to="/">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link onClick={closeMenu} to="/about/">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link onClick={closeMenu} to="/components/">
+            Components
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

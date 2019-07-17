@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style/card.scss";
 
 import Typography from "./Typography";
@@ -9,8 +9,7 @@ function Card(props) {
       <div className="top">
         <Typography
           type="h1"
-          style={{ backgroundColor: props.bg, color: props.text }}
-        >
+          style={{ backgroundColor: props.bg, color: props.text }}>
           {props.title}
         </Typography>
 

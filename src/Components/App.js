@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Index from "./Routes/Index";
 import About from "./Routes/About";
 import Components from "./Routes/Components";
 import Nav from "./Nav/Nav";
-import Typography from "./Typography";
 
 function App() {
   return (
