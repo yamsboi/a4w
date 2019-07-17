@@ -9,21 +9,18 @@ function Card(props) {
       <div className="top">
         <Typography
           type="h1"
-          style={{ backgroundColor: props.bg, color: props.text }}>
+          style={{ backgroundColor: props.bg, color: props.text }}
+        >
           {props.title}
         </Typography>
 
         <div className="img">
           <img className="" src={props.img} alt={props.alt} />
         </div>
-      </div>
-
-      <div className="middle">
         <Typography className="h3" type="h3">
           {props.subtitle}
         </Typography>
       </div>
-
       <div className="bottom">
         <div className="body">
           <p>{props.children}</p>
