@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { render } from "react-dom";
+import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
 import "./../style/nav.scss";
 
@@ -14,6 +16,28 @@ function Nav() {
     setState(false);
   }
 
+  const links = [
+    {
+      to: "/",
+      title: "Home"
+    },
+    {
+      to: "/about/",
+      title: "About"
+    },
+    {
+      to: "/components/",
+      title: "Components"
+    }
+  ];
+  const config = { mass: 5, tension: 2000, friction: 200 };
+  const trail = useTrail(links.length, {
+    config,
+    opacity: state ? 1 : 0,
+    x: state ? 0 : 20,
+    height: state ? 80 : 0,
+    from: { opacity: 0, x: 20, height: 0 }
+  });
   return (
     <nav>
       <Hamburger state={state} toggleState={toggle} />
@@ -23,24 +47,27 @@ function Nav() {
           "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
         }
       />
-
-      <ul className={state ? "menu_ul_visible" : "menu_ul_hidden"}>
-        <li>
-          <Link onClick={closeMenu} to="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link onClick={closeMenu} to="/about/">
-            About
-          </Link>
-        </li>
-        <li>
-          <Link onClick={closeMenu} to="/components/">
-            Components
-          </Link>
-        </li>
-      </ul>
+      {state ? (
+        <ul>
+          {trail.map(({ x, height, ...rest }, index) => (
+            <li>
+              <animated.div
+                key={links[index]}
+                className="trails-text"
+                style={{
+                  ...rest,
+                  transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+                }}>
+                <animated.div style={{ height }}>
+                  <Link onClick={closeMenu} to={links[index].to}>
+                    {links[index].title}
+                  </Link>
+                </animated.div>
+              </animated.div>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </nav>
   );
 }
