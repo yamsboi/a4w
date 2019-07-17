@@ -41,10 +41,11 @@
 
   .middle {
     width: 100%;
+    position: relative;
 
     h3 {
       margin: 0;
-      bottom: 300px;
+      bottom: 0;
       position: absolute;
       transform: rotate(270deg);
       transform-origin: bottom left;
