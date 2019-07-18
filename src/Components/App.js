@@ -5,12 +5,12 @@ import Index from "./Routes/Index";
 import About from "./Routes/About";
 import Components from "./Routes/Components";
 import Nav from "./Nav/Nav";
-
+import Footer from "./Footer";
 function App() {
   return (
     <div className="App">
       <Router>
-        <div>
+        <section className="main">
           <Nav />
 
           <section className="content">
@@ -18,7 +18,8 @@ function App() {
             <Route path="/about/" component={About} />
             <Route path="/components/" component={Components} />
           </section>
-        </div>
+        </section>
+        <Footer />
       </Router>
     </div>
   );

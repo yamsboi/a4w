@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
 import "../style/nav.scss";
@@ -18,7 +18,8 @@ function Nav() {
   const links = [
     {
       to: "/",
-      title: "Home"
+      title: "Home",
+      exact: true
     },
     {
       to: "/about/",
@@ -57,15 +58,19 @@ function Nav() {
                 transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
               }}>
               <animated.div style={{ height }}>
-                <Link onClick={closeMenu} to={links[index].to}>
+                <NavLink
+                  key={links[index]}
+                  exact={links[index].exact}
+                  activeClassName="route-active"
+                  onClick={closeMenu}
+                  to={links[index].to}>
                   {links[index].title}
-                </Link>
+                </NavLink>
               </animated.div>
             </animated.div>
           </li>
         ))}
       </ul>
-      )
     </nav>
   );
 }

@@ -1,23 +1,9 @@
 import React from "react";
-import Typography from "../Typography";
 import Card from "../Card";
 
 function Components() {
   return (
     <div>
-      <Typography type="h1" className="route-title">
-        Components
-      </Typography>
-      <Typography type="h1">Header 1</Typography>
-      <Typography type="h2">Header 2</Typography>
-      <Typography type="h3">Header 3</Typography>
-      <Typography type="h4">Header 4</Typography>
-      <Typography type="h5">Header 5</Typography>
-      <Typography type="h6">Header 6</Typography>
-      <Typography type="p">Body</Typography>
-      <Typography type="a" href="https://www.youtube.com">
-        This is a link
-      </Typography>
       <Card
         img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         title="Professionalism"

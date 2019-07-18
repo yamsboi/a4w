@@ -1,5 +1,9 @@
 @import "variables";
 
+.route-active {
+  text-decoration: underline;
+}
+
 nav {
   .menu-container {
     z-index: 1;
@@ -7,12 +11,13 @@ nav {
     height: $hamburger-size;
     width: $hamburger-size;
     transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform-origin: center;
-    border-radius: 100%;
+    transform-origin: top left;
+    border-radius: 0 0 100px 0;
     background-color: rgb(255, 164, 164);
   }
+
   .menu-expanded {
-    transform: scale(36);
+    transform: scale(20);
   }
   .menu-collapsed {
     transform: scale(0);
@@ -25,9 +30,7 @@ nav {
     height: 80px;
     line-height: 80px;
     color: palevioletred;
-    font-size: 5em;
     font-weight: 800;
-    text-transform: uppercase;
     will-change: transform, opacity;
     overflow: hidden;
   }
@@ -55,8 +58,7 @@ nav {
         text-decoration: none;
         padding: 20px;
         color: white;
-        font-size: 54px;
-        text-transform: uppercase;
+        font-size: 3em;
       }
     }
   }
@@ -75,7 +77,7 @@ nav {
       top: 200px;
     }
     .menu-expanded {
-      transform: scale(20);
+      transform: scale(10);
     }
   }
 }
