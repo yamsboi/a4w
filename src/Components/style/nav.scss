@@ -1,5 +1,4 @@
 @import "variables";
-$hamburger-size: 60px;
 
 nav {
   .menu-container {
@@ -8,15 +7,16 @@ nav {
     height: $hamburger-size;
     width: $hamburger-size;
     transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-    transform: scale(36);
     transform-origin: center;
-
     border-radius: 100%;
     background-color: rgb(255, 164, 164);
   }
+  .menu-expanded {
+    transform: scale(36);
+  }
   .menu-collapsed {
     transform: scale(0);
+    transition-delay: 0.15s;
   }
 
   .trails-text {
@@ -68,20 +68,14 @@ nav {
   }
 }
 
-.hamburger {
-  color: white;
-  z-index: 9999;
-  top: 0;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary;
-  height: $hamburger-size;
-  width: $hamburger-size;
-  border-radius: 0px 0px 50% 0px;
-  font-weight: 800;
-  &:hover {
-    cursor: pointer;
+@media screen and (min-width: $breakpoint-mobile) {
+  nav {
+    ul {
+      left: 250px;
+      top: 200px;
+    }
+    .menu-expanded {
+      transform: scale(20);
+    }
   }
 }

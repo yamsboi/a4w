@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
-import "./../style/nav.scss";
+import "../style/nav.scss";
 
 function Nav() {
   const [state, setState] = useState(false);
@@ -35,38 +35,37 @@ function Nav() {
     opacity: state ? 1 : 0,
     x: state ? 0 : 20,
     height: state ? 80 : 0,
-    from: { opacity: 0, x: 20, height: 0 }
+
+    from: { opacity: 0, x: 20, height: 0, delay: 200 }
   });
   return (
     <nav>
       <Hamburger state={state} toggleState={toggle} />
-
       <div
         className={
           "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
         }
       />
-      {state ? (
-        <ul>
-          {trail.map(({ x, height, ...rest }, index) => (
-            <li>
-              <animated.div
-                key={links[index]}
-                className="trails-text"
-                style={{
-                  ...rest,
-                  transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
-                }}>
-                <animated.div style={{ height }}>
-                  <Link onClick={closeMenu} to={links[index].to}>
-                    {links[index].title}
-                  </Link>
-                </animated.div>
+      <ul>
+        {trail.map(({ x, height, ...rest }, index) => (
+          <li>
+            <animated.div
+              key={links[index]}
+              className="trails-text"
+              style={{
+                ...rest,
+                transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+              }}>
+              <animated.div style={{ height }}>
+                <Link onClick={closeMenu} to={links[index].to}>
+                  {links[index].title}
+                </Link>
               </animated.div>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+            </animated.div>
+          </li>
+        ))}
+      </ul>
+      )
     </nav>
   );
 }
