@@ -8,8 +8,11 @@
   justify-content: center;
   align-items: center;
   height: $hamburger-size;
-  width: $hamburger-size;
+  min-width: $hamburger-size;
+  width: 15vw;
   border-radius: 0px 0px 10px 0px;
+  background: none;
+  border: none;
 
   .hamburger-text {
     font-weight: 800;
@@ -17,5 +20,8 @@
   }
   &:hover {
     cursor: pointer;
+  }
+  &:focus {
+    outline: 0;
   }
 }

@@ -17,3 +17,11 @@ body {
 .main {
   flex: 1 0 auto;
 }
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
