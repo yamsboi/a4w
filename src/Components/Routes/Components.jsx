@@ -5,10 +5,12 @@ function Components() {
   return (
     <div>
       <Card
+        h1Color="#aabbcc"
         img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         title="Professionalism"
         alt="Placeholder"
-        subtitle="Modern">
+        subtitle="Modern"
+      >
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -21,7 +23,8 @@ function Components() {
         img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         title="Futuristic"
         alt="Placeholder"
-        subtitle="Artistic">
+        subtitle="Artistic"
+      >
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -34,7 +37,8 @@ function Components() {
         img="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
         title="Futuristic"
         alt="Placeholder"
-        subtitle="Artistic">
+        subtitle="Artistic"
+      >
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
