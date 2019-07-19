@@ -6,6 +6,7 @@ function Components() {
     <div>
       <Card
         h1Color="#aabbcc"
+        h3Color="#bbccaa"
         img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         title="Professionalism"
         alt="Placeholder"
@@ -19,6 +20,7 @@ function Components() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum."
       </Card>
+
       <Card
         img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         title="Futuristic"

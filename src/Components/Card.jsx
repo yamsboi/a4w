@@ -15,7 +15,7 @@ function Card(props) {
         <div className="img">
           <img className="" src={props.img} alt={props.alt} />
         </div>
-        <Typography className="h3" type="h3">
+        <Typography className="h3" type="h3" style={{ color: props.h3Color }}>
           {props.subtitle}
         </Typography>
       </div>
