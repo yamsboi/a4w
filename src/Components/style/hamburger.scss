@@ -1,0 +1,21 @@
+@import "variables";
+
+.hamburger {
+  z-index: 9999;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $hamburger-size;
+  width: $hamburger-size;
+  border-radius: 0px 0px 10px 0px;
+
+  .hamburger-text {
+    font-weight: 800;
+    margin-top: 0;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
