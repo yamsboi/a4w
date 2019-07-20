@@ -74,13 +74,31 @@ nav {
 }
 
 @media screen and (min-width: $breakpoint-mobile) {
+  .trails-text {
+    height: 50px;
+  }
   nav {
-    ul {
-      left: 250px;
-      top: 200px;
+    .overlay {
+      display: none; //deactivate
+      top: 0;
+      left: 0;
+      transform-origin: top left;
+      border-radius: 0 0 100% 0;
     }
-    .menu-expanded {
-      transform: scale(10);
+    .overlay-active {
+      transform: scale(12);
+    }
+    ul {
+      width: 15vw;
+      left: 0;
+      top: 70px;
+      transform: translate(0, 0);
+      li {
+        a {
+          font-size: 16px;
+          color: black;
+        }
+      }
     }
   }
 }

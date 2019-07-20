@@ -1,0 +1,11 @@
+@import "variables";
+
+.button {
+  background-color: $secondary;
+  border: 0;
+  padding: 20px;
+
+  &:active {
+    outline: 0;
+  }
+}

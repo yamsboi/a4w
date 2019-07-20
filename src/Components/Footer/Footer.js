@@ -1,5 +1,6 @@
 import React from "react";
 import SocialMedia from "./SocialMedia";
+import Button from "../Button";
 import "../style/footer.scss";
 
 const year = new Date().getFullYear();

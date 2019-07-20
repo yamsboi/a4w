@@ -48,9 +48,8 @@ function Nav() {
 
       <ul>
         {trail.map(({ x, height, ...rest }, index) => (
-          <li>
+          <li key={links[index].title}>
             <animated.div
-              key={links[index]}
               className="trails-text"
               style={{
                 ...rest,
@@ -59,7 +58,6 @@ function Nav() {
               <animated.div style={{ height }}>
                 <NavLink
                   style={{ height }}
-                  key={links[index]}
                   exact={links[index].exact}
                   activeClassName="route-active"
                   onClick={closeMenu}

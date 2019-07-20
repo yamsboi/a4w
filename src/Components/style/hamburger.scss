@@ -26,3 +26,11 @@
     outline: 0;
   }
 }
+
+@media screen and (min-width: $breakpoint-mobile) {
+  .hamburger {
+    top: 0;
+    left: 0;
+    height: 70px;
+  }
+}
