@@ -1,11 +1,8 @@
 @import "variables";
 
-$footer-height: 300px;
-
 .footer {
-  height: $footer-height;
+  flex-shrink: 0;
   width: 100%;
   padding: 20px;
   background-color: $primary;
-  margin-top: -$footer-height;
 }
