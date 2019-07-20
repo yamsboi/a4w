@@ -36,7 +36,6 @@ function Nav() {
     opacity: state ? 1 : 0,
     x: state ? 0 : 20,
     height: state ? 80 : 0,
-
     from: { opacity: 0, x: 20, height: 0, delay: 200 }
   });
   return (
@@ -57,8 +56,9 @@ function Nav() {
                 ...rest,
                 transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
               }}>
-              <animated.div style={{ height }}>
+              <animated.div>
                 <NavLink
+                  style={{ height }}
                   key={links[index]}
                   exact={links[index].exact}
                   activeClassName="route-active"

@@ -6,13 +6,15 @@
 
 nav {
   .menu-container {
-    z-index: 1;
+    right: 0;
+    bottom: 0;
+    z-index: 8000;
     position: fixed;
     height: $hamburger-size;
     width: $hamburger-size;
     transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform-origin: top left;
-    border-radius: 0 0 100px 0;
+    transform-origin: bottom right;
+    border-radius: 100% 0 0 0;
     background-color: rgb(255, 164, 164);
   }
 
@@ -65,7 +67,8 @@ nav {
 
   * {
     &::selection {
-      color: white;
+      color: none;
+      background-color: rgba(0, 0, 0, 0);
     }
   }
 }
