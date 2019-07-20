@@ -4,8 +4,23 @@
   text-decoration: underline;
 }
 
+.trails-text {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  color: palevioletred;
+  font-weight: 800;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.trails-text > div {
+  overflow: hidden;
+}
 nav {
   .menu-container {
+    opacity: 0.9;
     right: 0;
     bottom: 0;
     z-index: 8000;
@@ -19,26 +34,11 @@ nav {
   }
 
   .menu-expanded {
-    transform: scale(20);
+    transform: scale(30);
   }
   .menu-collapsed {
     transform: scale(0);
     transition-delay: 0.15s;
-  }
-
-  .trails-text {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    color: palevioletred;
-    font-weight: 800;
-    will-change: transform, opacity;
-    overflow: hidden;
-  }
-
-  .trails-text > div {
-    overflow: hidden;
   }
 
   ul {
