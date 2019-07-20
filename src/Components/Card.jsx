@@ -2,7 +2,6 @@ import React from "react";
 import "./style/card.scss";
 
 import Typography from "./Typography";
-import { removePropertiesDeep } from "@babel/types";
 
 function Card(props) {
   return (
@@ -11,7 +10,6 @@ function Card(props) {
         <Typography type="h1" style={{ color: props.h1Color }}>
           {props.title}
         </Typography>
-
         <div className="img">
           <img className="" src={props.img} alt={props.alt} />
         </div>
@@ -19,6 +17,7 @@ function Card(props) {
           {props.subtitle}
         </Typography>
       </div>
+
       <div className="bottom">
         <div className="body">
           <p>{props.children}</p>

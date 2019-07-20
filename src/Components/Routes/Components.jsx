@@ -22,6 +22,7 @@ function Components() {
       </Card>
 
       <Card
+        h3Color="#bbbbbb"
         img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         title="Futuristic"
         alt="Placeholder"
@@ -36,6 +37,8 @@ function Components() {
         mollit anim id est laborum."
       </Card>
       <Card
+        h1Color="#784848"
+        h3Color="#c9a824"
         img="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
         title="Futuristic"
         alt="Placeholder"
