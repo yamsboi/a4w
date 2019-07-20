@@ -42,8 +42,6 @@ function Nav() {
     <nav>
       <Hamburger state={state} toggleState={toggle} />
       <div
-        // style={state ? "backGroundColor: " + props.color : null}
-
         className={
           "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
         }

@@ -10,12 +10,8 @@ body {
   flex-direction: column;
 }
 
-.content {
-  padding-top: 50px;
-}
-
 .main {
-  flex: 1 0 auto;
+  min-height: 100vh;
 }
 
 input,
