@@ -43,9 +43,7 @@ function Nav() {
     <nav>
       <Hamburger state={state} toggleState={toggle} />
       <div
-        className={
-          "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
-        }
+        className={"overlay " + (state ? "overlay-active" : "overlay-inactive")}
       />
 
       <ul>
