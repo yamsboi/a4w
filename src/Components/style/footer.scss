@@ -4,4 +4,19 @@
   flex-shrink: 0;
   padding: 20px;
   background-color: $primary;
+
+  padding: 15vw;
+
+  .social-media-container {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-right: 10px;
+    }
+  }
+
+  .copyright {
+    position: absolute;
+  }
 }

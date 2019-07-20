@@ -38,6 +38,7 @@ function Nav() {
     height: state ? 80 : 0,
     from: { opacity: 0, x: 20, height: 0, delay: 200 }
   });
+
   return (
     <nav>
       <Hamburger state={state} toggleState={toggle} />
@@ -46,6 +47,7 @@ function Nav() {
           "menu-container " + (state ? "menu-expanded" : "menu-collapsed")
         }
       />
+
       <ul>
         {trail.map(({ x, height, ...rest }, index) => (
           <li>
@@ -56,7 +58,7 @@ function Nav() {
                 ...rest,
                 transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
               }}>
-              <animated.div>
+              <animated.div style={{ height }}>
                 <NavLink
                   style={{ height }}
                   key={links[index]}
