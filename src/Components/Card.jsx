@@ -2,7 +2,6 @@ import React from "react";
 import "./style/card.scss";
 
 import Typography from "./Typography";
-import { removePropertiesDeep } from "@babel/types";
 
 function Card(props) {
   return (

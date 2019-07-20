@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 nav {
-  .menu-container {
+  .overlay {
     opacity: 0.9;
     right: 0;
     bottom: 0;
@@ -33,10 +33,10 @@ nav {
     background-color: rgb(255, 164, 164);
   }
 
-  .menu-expanded {
+  .overlay-active {
     transform: scale(30);
   }
-  .menu-collapsed {
+  .overlay-inactive {
     transform: scale(0);
     transition-delay: 0.15s;
   }

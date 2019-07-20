@@ -5,7 +5,7 @@ import Index from "./Routes/Index";
 import About from "./Routes/About";
 import Components from "./Routes/Components";
 import Nav from "./Nav/Nav";
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 function App() {
   return (
     <div className="App">
