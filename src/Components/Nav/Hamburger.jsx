@@ -4,7 +4,7 @@ import "../style/hamburger.scss";
 
 const Hamburger = props => {
   return (
-    <button onClick={props.toggleState} className="hamburger">
+    <button onClick={props.toggle} className="hamburger">
       <p className="hamburger-text">{props.state ? "Close" : "Menu"}</p>
     </button>
   );

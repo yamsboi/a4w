@@ -2,34 +2,36 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
+
 import "../style/nav.scss";
 
 function Nav() {
   const [state, setState] = useState(false);
 
   function toggle() {
-    state ? setState(false) : setState(true);
+    setState(!state);
   }
-
   function closeMenu() {
-    setState(false);
+    toggle(false);
   }
 
   const links = [
     {
       to: "/",
-      title: "Home",
+      title: "Hem",
       exact: true
     },
     {
       to: "/about/",
-      title: "About"
+      title: "Behandlingar"
     },
     {
       to: "/components/",
       title: "Components"
     }
   ];
+
+  //React-Spring
   const config = { mass: 5, tension: 2000, friction: 200 };
   const trail = useTrail(links.length, {
     config,
@@ -41,32 +43,32 @@ function Nav() {
 
   return (
     <nav>
-      <Hamburger state={state} toggleState={toggle} />
+      <Hamburger state={state} toggle={toggle} />
+
       <div
         className={"overlay " + (state ? "overlay-active" : "overlay-inactive")}
       />
 
       <ul>
         {trail.map(({ x, height, ...rest }, index) => (
-          <li key={links[index].title}>
-            <animated.div
-              className="trails-text"
-              style={{
-                ...rest,
-                transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
-              }}>
-              <animated.div style={{ height }}>
-                <NavLink
-                  style={{ height }}
-                  exact={links[index].exact}
-                  activeClassName="route-active"
-                  onClick={closeMenu}
-                  to={links[index].to}>
-                  {links[index].title}
-                </NavLink>
-              </animated.div>
+          <animated.li
+            key={links[index].title}
+            className="trails-text"
+            style={{
+              ...rest,
+              transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+            }}>
+            <animated.div style={{ height }}>
+              <NavLink
+                style={{ height }}
+                exact={links[index].exact}
+                activeClassName="route-active"
+                onClick={closeMenu}
+                to={links[index].to}>
+                {links[index].title}
+              </NavLink>
             </animated.div>
-          </li>
+          </animated.li>
         ))}
       </ul>
     </nav>

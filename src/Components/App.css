@@ -14,8 +14,9 @@ body {
   padding: 0;
   width: 100%;
 }
-.main {
+main {
   flex: 1 0 auto;
+  padding: 10vw;
 }
 
 .App {

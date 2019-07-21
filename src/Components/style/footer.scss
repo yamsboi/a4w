@@ -1,10 +1,9 @@
 @import "variables";
 
-.footer {
+footer {
   flex-shrink: 0;
-  padding: 20px;
   background-color: $primary;
-  padding: 15vw;
+  padding: 9vw 15vw;
   color: #202121;
   font-weight: bold;
 
@@ -19,6 +18,8 @@
   }
 
   .copyright {
+    font-weight: 300;
+    margin-top: 0vw;
     font-size: 14px;
     display: flex;
     justify-content: space-between;
