@@ -5,8 +5,9 @@ function Components() {
   return (
     <div>
       <Card
-        h1Color="#aabbcc"
-        h3Color="#bbccaa"
+        h1Color="rgb(58, 88, 112)"
+        h3Color="rgb(169, 85, 37)"
+        shadow="rgb(64, 106, 127)"
         img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         title="Botox"
         alt="Botox"
@@ -21,7 +22,8 @@ function Components() {
       </Card>
 
       <Card
-        h3Color="#bbbbbb"
+        h3Color="rgb(255, 0, 161)"
+        shadow="rgb(176, 176, 176)"
         img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         title="Futuristic"
         alt="Placeholder"
@@ -35,9 +37,10 @@ function Components() {
         mollit anim id est laborum."
       </Card>
       <Card
-        h1Color="#784848"
-        h3Color="#c9a824"
-        img="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        h1Color="rgb(243, 217, 226)"
+        h3Color="rgb(229, 128, 176)"
+        shadow="rgb(243, 219, 227)"
+        img="https://images.unsplash.com/photo-1498842812179-c81beecf902c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3342&q=80"
         title="Futuristic"
         alt="Placeholder"
         subtitle="Artistic">
