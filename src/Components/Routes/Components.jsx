@@ -1,10 +1,12 @@
 import React from "react";
 import Card from "../Card";
 import Button from "../Button";
+import Typography from "../Typography";
 
 function Components() {
   return (
     <div>
+      <h2>Components</h2>
       <Card
         h1Color="rgb(58, 88, 112)"
         h3Color="rgb(169, 85, 37)"
@@ -24,6 +26,8 @@ function Components() {
         </p>
 
         <Button float="right" text="Boka tid" />
+
+        <Typography type="title">kekek yaman is gay</Typography>
       </Card>
 
       <Card

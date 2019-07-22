@@ -1,15 +1,33 @@
 @import "variables";
 
 .button {
-  background-color: $secondary;
-  border: 0;
-  padding: 20px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
+  width: 100%;
+  display: inline-block;
+  button {
+    background-color: $secondary;
+    border: 0;
+    padding: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
 
-  &:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      animation: nudge 1000ms linear infinite alternate;
+    }
+  }
+}
+
+@keyframes nudge {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(5px, 0);
   }
 }

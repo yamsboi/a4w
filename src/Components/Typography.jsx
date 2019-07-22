@@ -5,11 +5,17 @@ import "./style/typography.scss";
 const Typography = props => {
   const DynamicTag = `${props.type}`;
 
-  return (
-    <DynamicTag className={props.className} style={props.style}>
-      {props.children}
-    </DynamicTag>
-  );
+  switch (props.type) {
+    case "title":
+      return <h3 className="h3-title">{props.children}</h3>;
+
+    default:
+      return (
+        <DynamicTag className={props.className} style={props.style}>
+          {props.children}
+        </DynamicTag>
+      );
+  }
 };
 
 export default Typography;
