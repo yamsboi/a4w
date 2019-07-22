@@ -4,8 +4,12 @@
   background-color: $secondary;
   border: 0;
   padding: 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
 
-  &:active {
-    outline: 0;
+  &:focus {
+    outline: none;
   }
 }

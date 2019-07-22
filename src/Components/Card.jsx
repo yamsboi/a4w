@@ -4,10 +4,10 @@ import "./style/card.scss";
 
 import Typography from "./Typography";
 
-function Card(props) {
+const Card = props => {
   return (
     <div className="card-container">
-      <div className="top">
+      <section className="top">
         <div
           className="card-shadow"
           style={{ backgroundColor: props.shadow }}
@@ -22,15 +22,13 @@ function Card(props) {
         <Typography className="h3" type="h3" style={{ color: props.h3Color }}>
           {props.subtitle}
         </Typography>
-      </div>
+      </section>
 
-      <div className="bottom">
-        <div className="body">
-          <p>{props.children}</p>
-        </div>
-      </div>
+      <section className="bottom">
+        <div className="body">{props.children}</div>
+      </section>
     </div>
   );
-}
+};
 
 export default Card;

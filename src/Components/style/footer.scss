@@ -3,7 +3,8 @@
 footer {
   flex-shrink: 0;
   background-color: $primary;
-  padding: 9vw 10vw;
+
+  padding: 5vw 10vw 15vw 10vw;
   color: #202121;
   font-weight: bold;
 
@@ -24,5 +25,7 @@ footer {
     display: flex;
     justify-content: space-between;
     position: absolute;
+    * {
+    }
   }
 }

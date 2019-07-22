@@ -45,9 +45,7 @@ function Nav() {
     <nav>
       <Hamburger state={state} toggle={toggle} />
 
-      <div
-        className={"overlay " + (state ? "overlay-active" : "overlay-inactive")}
-      />
+      <div className={"overlay " + (state ? "overlay-active" : "")} />
 
       <ul>
         {trail.map(({ x, height, ...rest }, index) => (
@@ -60,7 +58,6 @@ function Nav() {
             }}>
             <animated.div style={{ height }}>
               <NavLink
-                style={{ height }}
                 exact={links[index].exact}
                 activeClassName="route-active"
                 onClick={closeMenu}
