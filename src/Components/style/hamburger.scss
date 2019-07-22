@@ -6,25 +6,37 @@
   bottom: 0;
   position: fixed;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: $hamburger-size;
   min-width: $hamburger-size;
+  max-width: $hamburger-size;
   width: 15vw;
-  border-radius: 0px 0px 10px 0px;
+  border-radius: 30%; 
   background: none;
   border: none;
 
   .hamburger-text {
     font-size: 1rem;
     font-weight: 800;
-    margin-top: 0;
+    margin: auto;
   }
   &:hover {
     cursor: pointer;
   }
   &:focus {
     outline: 0;
+  }
+
+  .underline {
+    position: absolute;
+    top: 35px;
+    width: inherit;
+    height: 5px;
+    border-radius: 10px;
+    background: $secondary;
+    opacity: 20%;
   }
 }
 

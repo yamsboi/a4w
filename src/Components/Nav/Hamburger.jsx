@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../style/hamburger.scss";
+import { useSpring, animated } from "react-spring";
 
 const Hamburger = props => {
+
+  const widthAnimation = useSpring({
+    width: props.state ? 0 : 48,
+  });
+
   return (
-    <button onClick={props.toggle} className="hamburger">
+    <animated.button onClick={props.toggle} className="hamburger" >
       <p className="hamburger-text">{props.state ? "Close" : "Menu"}</p>
-    </button>
+        <animated.span className="underline" style={ widthAnimation } ></animated.span> 
+    </animated.button>
   );
 };
 

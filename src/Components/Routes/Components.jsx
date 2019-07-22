@@ -5,6 +5,7 @@ import Button from "../Button";
 function Components() {
   return (
     <div>
+
       <Card
         h1Color="rgb(58, 88, 112)"
         h3Color="rgb(169, 85, 37)"
@@ -44,7 +45,7 @@ function Components() {
         </p>
       </Card>
       <Card
-        h1Color="rgb(243, 217, 226)"
+        h1Color="rgb(242, 190, 226)"
         h3Color="rgb(229, 128, 176)"
         shadow="rgb(243, 219, 227)"
         img="https://images.unsplash.com/photo-1498842812179-c81beecf902c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3342&q=80"
