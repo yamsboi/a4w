@@ -1,9 +1,10 @@
 @import "variables";
 
 .hamburger {
+  background: none;
   z-index: 9999;
-  right: 0;
-  bottom: 0;
+  right: 6vw;
+  top: 0;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -11,10 +12,8 @@
   align-items: center;
   height: $hamburger-size;
   min-width: $hamburger-size;
-  max-width: $hamburger-size;
+
   width: 15vw;
-  border-radius: 30%; 
-  background: none;
   border: none;
 
   .hamburger-text {

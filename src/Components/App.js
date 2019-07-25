@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <main>
-          <Nav />
+        <Nav />
 
+        <main>
           <section className="content">
             <Switch>
               <Route path="/" exact component={Index} />

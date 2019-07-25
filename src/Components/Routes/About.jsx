@@ -1,10 +1,10 @@
 import React from "react";
 import Typography from "../Typography";
-
+import Header from "../Header";
 function About() {
   return (
     <div>
-      <h2>About</h2>
+      <Header text="About" />
       <Typography type="h1" className="route-title">
         Components
       </Typography>

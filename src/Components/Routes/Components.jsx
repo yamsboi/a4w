@@ -2,11 +2,13 @@ import React from "react";
 import Card from "../Card";
 import Button from "../Button";
 import Typography from "../Typography";
+import Wheel from "../Wheel";
+import Header from "../Header";
 
 function Components() {
   return (
     <div>
-      <h2>Components</h2>
+      <Header text="Components" />
       <Card
         h1Color="rgb(58, 88, 112)"
         h3Color="rgb(169, 85, 37)"
@@ -28,6 +30,7 @@ function Components() {
         <Button float="right" text="Boka tid" />
 
         <Typography type="title">kekek yaman is gay</Typography>
+        <Wheel value="Certifierad av MyBeatyAcademy" />
       </Card>
 
       <Card
