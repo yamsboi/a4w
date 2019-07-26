@@ -3,22 +3,21 @@
 .hamburger {
   background: none;
   z-index: 9999;
-  right: 6vw;
-  top: 0;
+
+  right: calc(8vw + 3px);
+  top: calc(10vw - 17px);
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
   height: $hamburger-size;
-  min-width: $hamburger-size;
 
-  width: 15vw;
   border: none;
 
   .hamburger-text {
-    font-size: 1rem;
-    font-weight: 800;
+    font-family: "Literata", serif;
+    line-height: 0.5;
     margin: auto;
   }
   &:hover {
@@ -29,6 +28,7 @@
   }
 
   .underline {
+    display: none;
     position: absolute;
     top: 35px;
     width: inherit;

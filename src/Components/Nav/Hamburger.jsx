@@ -10,7 +10,7 @@ const Hamburger = props => {
 
   return (
     <animated.button onClick={props.toggle} className="hamburger">
-      <p className="hamburger-text">{props.state ? "Close" : "Menu"}</p>
+      <h2 className="hamburger-text">{props.state ? "Close" : "Menu"}</h2>
       <animated.span className="underline" style={widthAnimation} />
     </animated.button>
   );

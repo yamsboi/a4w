@@ -17,7 +17,7 @@ function App() {
         <main>
           <section className="content">
             <Switch>
-              <Route path="/" exact component={Index} />
+              <Route path="/" exact component={Index} title="Home" />
               <Route path="/about/" component={About} />
               <Route path="/components/" component={Components} />
               <Route component={HTTP404} />
