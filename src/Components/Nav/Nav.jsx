@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
+import Header from "../Header";
 
 import "../style/nav.scss";
 
