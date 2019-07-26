@@ -5,6 +5,19 @@ $test: rgb(100, 84, 100);
 // BREAKPOINTS
 $breakpoint-mobile: 700px;
 
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
 //APP
 $global-padding: 10vw;
 

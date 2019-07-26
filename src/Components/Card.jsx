@@ -1,7 +1,5 @@
 import React from "react";
-
 import "./style/card.scss";
-
 import Typography from "./Typography";
 
 const Card = props => {

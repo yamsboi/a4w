@@ -34,7 +34,7 @@ function Components() {
       </Card>
 
       <Card
-        h3Color="rgb(255, 0, 161)"
+        h3Color="rgba(189, 195, 199, 1)"
         shadow="rgb(176, 176, 176)"
         img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         title="Futuristic"
