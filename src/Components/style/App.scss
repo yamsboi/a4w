@@ -21,6 +21,10 @@ body {
 main {
   flex: 1 0 auto;
   padding: $global-padding;
+
+  @media screen and (min-width: $breakpoint-mobile) {
+    padding-top: 30px;
+  }
 }
 
 .App {

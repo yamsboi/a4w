@@ -2,6 +2,9 @@
 
 .route-active {
   text-decoration: underline;
+  -webkit-text-stroke-width: 0px;
+
+  color: white;
 }
 
 .trails-text {
@@ -55,8 +58,11 @@ nav {
       a {
         text-decoration: none;
         padding: 20px;
-        color: white;
+
         font-size: 3em;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
       }
     }
   }
@@ -71,28 +77,24 @@ nav {
 
 @media screen and (min-width: $breakpoint-mobile) {
   .trails-text {
-    height: 50px;
+    width: auto;
   }
   nav {
     .overlay {
-      display: none; //deactivate
-      top: 0;
       left: 0;
-      transform-origin: top left;
-      border-radius: 0 0 100% 0;
-    }
-    .overlay-active {
-      transform: scale(12);
+      top: 0;
     }
     ul {
-      width: 15vw;
+      flex-direction: row;
       left: 0;
       top: 70px;
       transform: translate(0, 0);
       li {
         a {
-          font-size: 16px;
-          color: black;
+          text-decoration: none;
+          padding: 20px;
+          color: white;
+          font-size: 3em;
         }
       }
     }

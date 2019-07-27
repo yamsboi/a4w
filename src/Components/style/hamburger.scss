@@ -3,16 +3,13 @@
 .hamburger {
   background: none;
   z-index: 9999;
-
   right: calc(8vw + 3px);
   top: calc(10vw - 17px);
   position: fixed;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   height: $hamburger-size;
-
   border: none;
 
   .hamburger-text {
@@ -41,8 +38,10 @@
 
 @media screen and (min-width: $breakpoint-mobile) {
   .hamburger {
+    padding: 0;
     top: 0;
     left: 0;
     height: 70px;
+    width: 10vw;
   }
 }
