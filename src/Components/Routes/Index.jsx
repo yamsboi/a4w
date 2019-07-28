@@ -6,8 +6,9 @@ function Index() {
   return (
     <div>
       <Header text="Company Name" />
+      <h1>Botox</h1>
+      <h1>Fillers</h1>
 
-      <h1>home</h1>
       <Button text="BOOK" />
     </div>
   );

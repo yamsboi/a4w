@@ -38,6 +38,7 @@
 
 @media screen and (min-width: $breakpoint-mobile) {
   .hamburger {
+    display: none;
     padding: 0;
     top: 0;
     left: 0;
