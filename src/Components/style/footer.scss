@@ -1,29 +1,40 @@
 @import "variables";
 
 footer {
-  flex-shrink: 0;
-  background-color: $primary;
+  padding: 5vw 10vw 0 10vw;
+  font-weight: 600;
 
-  padding: 5vw 10vw 15vw 10vw;
-  color: #202121;
-  font-weight: bold;
-
-  .social-media-container {
-    display: flex;
+  ul {
     list-style: none;
     padding: 0;
+    padding-bottom: 50px;
 
     li {
-      margin-right: 10px;
+      font-weight: 400;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
     }
   }
 
   .copyright {
+    width: 100%;
     font-weight: 300;
-    margin-top: 0vw;
-    font-size: 14px;
+    font-size: 12px;
+  }
+}
+
+@include md {
+  footer {
     display: flex;
-    justify-content: space-between;
-    position: absolute;
+    flex-wrap: wrap;
+
+    div {
+      margin-right: 100px;
+    }
   }
 }

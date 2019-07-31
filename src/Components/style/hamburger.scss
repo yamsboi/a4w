@@ -4,18 +4,16 @@
   background: none;
   z-index: 9999;
   right: calc(8vw + 3px);
-  top: calc(10vw - 17px);
-  position: fixed;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: $hamburger-size;
   border: none;
 
   .hamburger-text {
     font-family: "Literata", serif;
-    line-height: 0.5;
-    margin: auto;
+    margin: 0;
   }
   &:hover {
     cursor: pointer;

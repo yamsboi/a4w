@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+@import "variables";
+/* Style the accordion section */
+.accordion__section {
+  border-bottom: solid 1px black;
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(1) {
+    border-top: solid 1px black;
+  }
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover,
+.active {
+  text-decoration: underline wavy $primary;
+}
+
+/* Style the accordion content title */
+.accordion__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.accordion__content {
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.accordion__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px;
+  padding-left: 0;
+}
+
+.accordion__info {
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  * {
+    margin: 0;
+  }
+
+  &:before {
+    background-color: red;
+    height: 100px;
+    width: 10px;
+  }
+}
+
+.accordion__children {
+  padding-left: 10px;
+  border-left: solid 5px pink;
+}
+@media screen and (min-width: $breakpoint-mobile) {
+  .accordion__section {
+    width: 50%;
+  }
+}

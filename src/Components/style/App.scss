@@ -19,11 +19,15 @@ body {
   width: 100%;
 }
 main {
+  padding-top: $global-padding;
   flex: 1 0 auto;
-  padding: $global-padding;
-
   @media screen and (min-width: $breakpoint-mobile) {
     padding-top: 30px;
+  }
+
+  > * {
+    padding-left: $global-padding;
+    padding-right: $global-padding;
   }
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import "./style/header.scss";
 const Header = props => {
   return (
     <header>

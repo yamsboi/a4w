@@ -4,6 +4,7 @@ const SocialMedia = props => {
   return (
     <li>
       <a href={props.href}>
+        {props.text}
         <svg style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24">
           <path fill={props.fill} d={props.d} />
         </svg>

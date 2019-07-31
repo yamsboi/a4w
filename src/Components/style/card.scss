@@ -8,13 +8,13 @@
   flex-flow: column nowrap;
 
   h1 {
-    mix-blend-mode: soft-light;
+    mix-blend-mode: difference;
     color: #212121;
     font-size: 40px;
     -webkit-text-stroke-width: 0px;
     position: absolute;
-    margin-top: -30px;
-    margin-left: -24px;
+    margin-top: -28px;
+    margin-left: -12px;
     z-index: 100;
   }
   .top {
@@ -48,6 +48,8 @@
       }
     }
     h3 {
+      left: 13px;
+      mix-blend-mode: color-dodge;
       margin: 0;
       bottom: 0;
       position: absolute;
@@ -64,19 +66,4 @@
     width: 100%;
     position: relative;
   }
-
-  .bottom {
-    .body {
-      padding: 10px;
-      p {
-        font-family: acumin-pro, sans-serif;
-        text-align: justify;
-        text-justify: inter-word;
-      }
-    }
-  }
-  p {
-    color: #191919;
-  }
 }
-

@@ -6,9 +6,21 @@ const Typography = props => {
   const DynamicTag = `${props.type}`;
 
   switch (props.type) {
-    case "title":
-      return <h3 className="h3-title">{props.children}</h3>;
+    case "headline":
+      return (
+        <h2 className="headline" style={{ textAlign: props.align }}>
+          {props.children}
+        </h2>
+      );
+    case "subhead":
+      return (
+        <h3 className="subhead" style={{ textAlign: props.align }}>
+          {props.children}
+        </h3>
+      );
 
+    case "body":
+      return <p className="body">{props.children}</p>;
     default:
       return (
         <DynamicTag className={props.className} style={props.style}>

@@ -3,12 +3,11 @@ import Card from "../Card";
 import Button from "../Button";
 import Typography from "../Typography";
 import Wheel from "../Wheel";
-import Header from "../Header";
+import Container from "../Container";
 
 function Components() {
   return (
-    <div>
-      <Header text="Components" />
+    <React.Fragment>
       <Card
         h1Color="rgb(58, 88, 112)"
         h3Color="rgb(169, 85, 37)"
@@ -17,17 +16,28 @@ function Components() {
         title="Botox"
         alt="Botox"
         subtitle="Botox">
-        <p>
+        <Typography type="body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam,consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-        </p>
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </Typography>
 
-        <Button float="right" text="Boka tid" />
+        <Button to="/" float="right" text="Boka tid" />
 
-        <Typography type="title">kekek yaman is gay</Typography>
-        <Wheel value="Certifierad av MyBeatyAcademy" />
+        <Container>
+          <Typography type="headline">kekek yaman is gay</Typography>
+          <Typography type="subhead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Typography>
+        </Container>
+
+        <Typography type="body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </Typography>
       </Card>
 
       <Card
@@ -37,7 +47,7 @@ function Components() {
         title="Futuristic"
         alt="Placeholder"
         subtitle="Artistic">
-        <p>
+        <Typography type="body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -45,7 +55,7 @@ function Components() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        </Typography>
       </Card>
       <Card
         h1Color="rgb(242, 190, 226)"
@@ -55,7 +65,7 @@ function Components() {
         title="Futuristic"
         alt="Placeholder"
         subtitle="Artistic">
-        <p>
+        <Typography type="body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -63,9 +73,10 @@ function Components() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        </Typography>
+        <Wheel value="Certifierad av MyBeatyAcademy" />
       </Card>
-    </div>
+    </React.Fragment>
   );
 }
 

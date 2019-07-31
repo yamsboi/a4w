@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
 import Hamburger from "./Hamburger";
 import Header from "../Header";
-
 import "../style/nav.scss";
 
 function Nav() {
@@ -23,7 +22,7 @@ function Nav() {
       exact: true
     },
     {
-      to: "/about/",
+      to: "/behandlingar/",
       title: "Behandlingar"
     },
     {
@@ -44,11 +43,13 @@ function Nav() {
 
   return (
     <nav>
+      <Header text="A4W" />
+
       <Hamburger state={state} toggle={toggle} />
 
       <div className={"overlay " + (state ? "overlay-active" : "")} />
 
-      <ul>
+      <ul className={state ? "" : "no-click"}>
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li
             key={links[index].title}

@@ -2,8 +2,10 @@
 
 .route-active {
   text-decoration: underline;
-
   color: black;
+}
+.no-click {
+  pointer-events: none;
 }
 
 .trails-text {
@@ -21,6 +23,18 @@
   overflow: hidden;
 }
 nav {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+
+  justify-content: space-between;
+  align-content: center;
+
+  margin-top: 10px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border-bottom: solid 1px black;
   .overlay {
     right: 0;
     top: 0;
@@ -56,7 +70,7 @@ nav {
 
       // Nav Links
       a {
-        font-family: "Literata", serif;
+        font-weight: 900;
         text-decoration: none;
         padding: 20px;
         font-size: 3em;
@@ -86,10 +100,10 @@ nav {
       display: none;
     }
     ul {
-      position: absolute;
+      pointer-events: auto !important;
+      position: relative;
       flex-direction: row;
-      right: $global-padding;
-      left:auto;
+      left: auto;
       top: 0;
       transform: translate(0, 0);
       li {
@@ -99,6 +113,7 @@ nav {
           text-decoration: none;
           padding-right: 0;
           font-size: 24px;
+          color: #666;
 
           &:hover {
             color: lighten(black, 30%);

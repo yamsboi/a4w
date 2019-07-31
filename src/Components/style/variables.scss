@@ -2,6 +2,7 @@ $primary: #ffa4a4;
 $secondary: #d87171;
 $test: rgb(100, 84, 100);
 
+$button-bg: white;
 // BREAKPOINTS
 $breakpoint-mobile: 700px;
 
@@ -17,12 +18,41 @@ $screen-lg-min: 992px;
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
-
 //APP
 $global-padding: 10vw;
 
 // NAV VARIABLES
-$hamburger-size: 48px;
+$hamburger-size: 68px;
 
 // FOOTER
 $footer-height: 300px;
+
+//MIXINS//MIXINS //MIXINS //MIXINS //MIXINS //MIXINS //MIXINS
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
