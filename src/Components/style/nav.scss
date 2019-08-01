@@ -87,8 +87,9 @@ nav {
   }
 }
 
-@media screen and (min-width: $breakpoint-mobile) {
+@include md {
   .trails-text {
+    width: 100%;
     overflow: visible;
     opacity: 1 !important;
   }

@@ -19,15 +19,18 @@ function Nav() {
     {
       to: "/",
       title: "Hem",
+      type: "NavLink",
       exact: true
     },
     {
       to: "/behandlingar/",
-      title: "Behandlingar"
+      title: "Behandlingar",
+      type: "NavLink"
     },
     {
-      to: "/components/",
-      title: "Components"
+      to: "https://www.w3schools.com/tags/tag_i.asp",
+      title: "Boka Online",
+      type: "a"
     }
   ];
 
@@ -59,13 +62,17 @@ function Nav() {
               transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
             }}>
             <animated.div style={{ height }}>
-              <NavLink
-                exact={links[index].exact}
-                activeClassName="route-active"
-                onClick={closeMenu}
-                to={links[index].to}>
-                {links[index].title}
-              </NavLink>
+              {links[index].type === "NavLink" ? (
+                <NavLink
+                  exact={links[index].exact}
+                  activeClassName="route-active"
+                  onClick={closeMenu}
+                  to={links[index].to}>
+                  {links[index].title}
+                </NavLink>
+              ) : (
+                <a href={links[index].to}>{links[index].title}</a>
+              )}
             </animated.div>
           </animated.li>
         ))}
