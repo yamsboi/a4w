@@ -23,7 +23,7 @@ function Nav() {
       exact: true
     },
     {
-      to: "/behandlingar/",
+      to: "/behandlingar/botox",
       title: "Behandlingar",
       type: "NavLink"
     },

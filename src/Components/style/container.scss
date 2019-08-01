@@ -1,3 +1,5 @@
+@import "variables";
+
 $padding: 3.5em;
 $margin: 3.5em;
 
@@ -6,4 +8,8 @@ $margin: 3.5em;
   padding-bottom: $padding;
   margin-top: $margin;
   margin-bottom: $margin;
+
+  @include md {
+    margin: 0;
+  }
 }

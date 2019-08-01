@@ -18,6 +18,11 @@ body {
   padding: 0;
   width: 100%;
 }
+
+header {
+  display: flex;
+  align-items: center;
+}
 main {
   padding-top: $global-padding;
   flex: 1 0 auto;
@@ -26,6 +31,8 @@ main {
   }
 
   > * {
+    display: flex;
+    flex-wrap: wrap;
     padding-left: $global-padding;
     padding-right: $global-padding;
   }

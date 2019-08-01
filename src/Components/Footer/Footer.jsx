@@ -39,10 +39,10 @@ const Footer = () => {
             <NavLink to="/behandlingar">Behandlingar</NavLink>
           </li>
           <li>
-            <NavLink to="/botox">Botox</NavLink>
+            <NavLink to="/behandlingar/botox">Botox</NavLink>
           </li>
           <li>
-            <NavLink to="/fillers">Fillers</NavLink>
+            <NavLink to="/behandlingar/fillers">Fillers</NavLink>
           </li>
         </ul>
       </div>

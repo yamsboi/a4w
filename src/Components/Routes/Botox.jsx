@@ -3,10 +3,14 @@ import Button from "../Button";
 import Typography from "../Typography";
 import Container from "../Container";
 import Accordion from "../Accordion/Accordion";
-
+import Card from "../Card";
 const BotoxRoute = () => {
   return (
     <React.Fragment>
+      <Card
+        shadow="#ff0000"
+        img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
+      />
       <Container>
         <Typography type="subhead">Botox</Typography>
         <Typography type="headline">
@@ -15,7 +19,7 @@ const BotoxRoute = () => {
           sätt.
         </Typography>
       </Container>
-      <Button float="right" to="/" text="BOOK" />
+      <Button float="right" to="/" text="BOKA TID" />
 
       <Container>
         <div>

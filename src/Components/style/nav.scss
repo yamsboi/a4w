@@ -38,7 +38,7 @@ nav {
   .overlay {
     right: 0;
     top: 0;
-    opacity: 0.9;
+    opacity: 0.95;
     height: 100%;
     width: 0;
     z-index: 8000;
@@ -87,6 +87,38 @@ nav {
   }
 }
 
+.treatments__links {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+  height: 100%;
+  li {
+    position: relative;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        transform: translateX(-0.84vw);
+        font-size: 27vw;
+      }
+
+      svg {
+        display: none;
+        position: absolute;
+        transform: translateX(-100%);
+      }
+    }
+
+    .active {
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+
 @include md {
   .trails-text {
     width: auto;
@@ -96,7 +128,18 @@ nav {
   .trails-text > div {
     overflow: visible;
   }
+
+  .treatments__links {
+    li {
+      a {
+        h1 {
+          font-size: 12vw;
+        }
+      }
+    }
+  }
   nav {
+    margin-top: 0;
     .overlay {
       display: none;
     }
@@ -110,7 +153,6 @@ nav {
       li {
         transform: none !important;
         a {
-          line-height: 0.5;
           text-decoration: none;
           padding-right: 0;
           font-size: 24px;

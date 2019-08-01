@@ -2,19 +2,25 @@ import React from "react";
 import Button from "../Button";
 import Typography from "../Typography";
 import Container from "../Container";
+import Card from "../Card";
+
 import PriceTable from "../PriceTable";
 import Accordion from "../Accordion/Accordion";
 
 const FillersRoute = () => {
   return (
     <React.Fragment>
+      <Card
+        shadow="#ff0000"
+        img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      />
       <Container>
         <Typography type="subhead">Fillers</Typography>
         <Typography type="headline">
           Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor.
         </Typography>
       </Container>
-      <Button to="/" float="right" text="Boka" />
+      <Button to="/" float="right" text="Boka tid" />
       <Container>
         <div>
           <Accordion title="Fillers Juvederm liten (0.5ml)">

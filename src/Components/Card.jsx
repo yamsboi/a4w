@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./style/card.scss";
 import Typography from "./Typography";
 
@@ -8,7 +9,9 @@ const Card = props => {
       <section className="top">
         <div
           className="card-shadow"
-          style={{ backgroundColor: props.shadow }}
+          style={{
+            backgroundColor: props.shadow
+          }}
         />
 
         <Typography type="h1" style={{ color: props.h1Color }}>
