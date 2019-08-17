@@ -6,8 +6,8 @@ $margin: 3.5em;
 .container {
   padding-top: $padding;
   padding-bottom: $padding;
-  margin-top: $margin;
-  margin-bottom: $margin;
+  // margin-top: $margin;
+  // margin-bottom: $margin;
 
   @include md {
     margin: 0;

@@ -1,6 +1,7 @@
 @import "variables";
 
 .hamburger {
+  padding: 0;
   background: none;
   z-index: 9999;
   right: calc(8vw + 3px);
@@ -12,7 +13,6 @@
   border: none;
 
   .hamburger-text {
-    font-family: "Literata", serif;
     margin: 0;
   }
   &:hover {

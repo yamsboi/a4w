@@ -56,3 +56,13 @@ $footer-height: 300px;
     @content;
   }
 }
+
+@keyframes nudge {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(5px, 0);
+  }
+}

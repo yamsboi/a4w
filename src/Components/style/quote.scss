@@ -1,0 +1,26 @@
+@import "variables";
+.treatment__quote {
+  font-style: italic;
+  position: relative;
+  grid-column: 1;
+
+  .quote__mark {
+    z-index: -1;
+    position: absolute;
+    top: 30px;
+    line-height: 0;
+    color: $primary;
+    font-size: 50px;
+    font-weight: 900;
+
+    &:nth-of-type(2) {
+      top: auto;
+      right: 0;
+      bottom: 15px;
+    }
+  }
+
+  @include md {
+    grid-column: 1/3;
+  }
+}

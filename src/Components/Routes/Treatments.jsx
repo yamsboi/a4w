@@ -3,6 +3,11 @@ import { NavLink, Route } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
 import BotoxRoute from "./Botox";
 import FillersRoute from "./Fillers";
+
+import Container from "../Container";
+import Button from "../Button";
+import Typography from "../Typography";
+
 // styling in nav.scss
 const treatments = [
   {
@@ -35,7 +40,7 @@ function Treatments({ match }) {
   });
 
   return (
-    <React.Fragment>
+    <div className="treatments">
       <ul className="treatments__links">
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li key={treatments[index].id}>
@@ -54,8 +59,8 @@ function Treatments({ match }) {
         ))}
       </ul>
 
-      <Route path={`${match.path}/:treatmentId`} component={Treatment} />
-    </React.Fragment>
+      <Route path={`${match.path}/:treatmentId`} exact component={Treatment} />
+    </div>
   );
 }
 

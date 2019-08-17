@@ -4,56 +4,58 @@ import Typography from "../Typography";
 import Container from "../Container";
 import Accordion from "../Accordion/Accordion";
 import Card from "../Card";
+import Quote from "../Quote";
 const BotoxRoute = () => {
   return (
     <React.Fragment>
-      <Card
-        shadow="#ff0000"
-        img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
-      />
-      <Container>
-        <Typography type="subhead">Botox</Typography>
+      <div className="treatment__image">
+        <Card
+          shadow="#395d73"
+          img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
+        />
+      </div>
+      <div className="treatment__info">
         <Typography type="headline">
-          Idag finns det ingen bättre behandlingsform än botox för att ta bort
-          eller motverka rynkor – botox kompletterar fillers på ett fantastiskt
-          sätt.
+          Botox används för att ta bort eller motverka rynkor – botox
+          kompletterar fillers på ett fantastiskt sätt.
         </Typography>
-      </Container>
-      <Button float="right" to="/" text="BOKA TID" />
+        <Button float="right" to="/" text="BOKA TID" />
+      </div>
+      <Quote>
+        <Typography type="body">
+          Behandling med Botox används inom både sjukvård och skönhetsvård för
+          estetisk rynkbehandling. Den baseras på Botulinumtoxins egenskap att
+          blockera frisättning av muskelsammandragande signalsubstans från nerv
+          till muskel. Därmed slappnar muskeln av och statiska rynkor slätas ut
+          samt dynamiska kan förebyggas. Denna effekt håller i sig ca 3 månader.
+          Behandlingsresultatet syns inom en vecka.
+        </Typography>
+      </Quote>
 
       <Container>
         <div>
-          <Accordion title="Botox liten (15 enheter)">
-            <div className="accordion__info">
-              <strong>Pris</strong>
-              <p>420 kr</p>
-            </div>
-            <div className="accordion__info">
-              <strong>Behandlingstid</strong>
-              <p>30 min</p>
-            </div>
-            <p>
-              Passar bra för mindre områden mellan ögonen eller sidan om ögonen.
-            </p>
+          <Accordion title="Före behandling">
+            <Typography type="body">
+              Kom osminkad. Undvik att ta preparat som ökar
+              blödningsbenägenheten före behandlingen (ex Treo, Voltaren). Dessa
+              preparat ökar risken att du får blåmärken efter injektionen.
+            </Typography>
           </Accordion>
-          <Accordion title="Botox stor (25 enheter)">
-            <div className="accordion__info">
-              <strong>Pris</strong>
-              <p>420 kr</p>
-            </div>
-            <div className="accordion__info">
-              <strong>Behandlingstid</strong>
-              <p>30 min</p>
-            </div>
-            <p>
-              Passar bra för mindre områden mellan ögonen eller sidan om ögonen.
-            </p>
+          <Accordion title="Efter behandling">
+            <Typography type="body">
+              Fysisk träning rekommenderas inte det närmaste dygnet efter
+              behandling. Gnugga inte på det behandlade området ett dygn
+              efterbehandling. Avstå från smink på det behandlade området ett
+              dygn efter behandling.
+            </Typography>
           </Accordion>
-          <Accordion title="Efterbehandling">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+          <Accordion title="Eventuella biverkningar">
+            <Typography type="body">
+              De vanligaste biverkningarna är huvudvärk, hudrodnad och svullnad.
+              Biverkningar kommer oftast de första dagarna efter injektionen och
+              är övergående. Kontakta mig eller din läkare vid tecken på oönskad
+              effekt.
+            </Typography>
           </Accordion>
         </div>
       </Container>

@@ -36,8 +36,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.216px;
   line-height: 28px;
-
-  text-align: center;
+  text-align: left;
 }
 .subhead {
   margin: 0;
@@ -46,7 +45,7 @@ a {
   letter-spacing: -0.374px;
   line-height: 25px;
   color: rgb(17, 17, 17);
-  text-align: center;
+  text-align: left;
 }
 .body {
   -webkit-font-smoothing: antialiased;
@@ -71,7 +70,7 @@ a {
 }
 @include md {
   .headline {
-    width: 50%;
+    width: 80%;
     text-align: left;
   }
 

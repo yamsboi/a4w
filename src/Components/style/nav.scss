@@ -8,6 +8,27 @@
   pointer-events: none;
 }
 
+.wave__1 {
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transform-origin: top;
+  transform: scaleY(2.5);
+
+  .wave__before {
+    background-color: $primary;
+    width: 100%;
+    height: 100%;
+
+    @include md {
+      height: 10%;
+    }
+  }
+}
+
 .trails-text {
   position: relative;
   width: 100%;
@@ -34,7 +55,7 @@ nav {
   margin-top: 10px;
   margin-left: 10vw;
   margin-right: 10vw;
-  border-bottom: solid 1px black;
+  // border-bottom: solid 1px black;
   .overlay {
     right: 0;
     top: 0;
@@ -88,10 +109,11 @@ nav {
 }
 
 .treatments__links {
+  grid-column: 1;
+  grid-row: 1;
   list-style: none;
   padding: 0;
-  width: 50%;
-  height: 100%;
+  height: 50%;
   li {
     position: relative;
 
@@ -116,6 +138,15 @@ nav {
         display: block;
       }
     }
+  }
+
+  .headline {
+    width: 100%;
+  }
+
+  @include md {
+    grid-column: 1;
+    grid-row: 1;
   }
 }
 
@@ -156,7 +187,7 @@ nav {
           text-decoration: none;
           padding-right: 0;
           font-size: 24px;
-          color: #666;
+          color: #000;
 
           &:hover {
             color: lighten(black, 30%);

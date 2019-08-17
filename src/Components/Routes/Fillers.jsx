@@ -10,17 +10,19 @@ import Accordion from "../Accordion/Accordion";
 const FillersRoute = () => {
   return (
     <React.Fragment>
-      <Card
-        shadow="#ff0000"
-        img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      />
-      <Container>
-        <Typography type="subhead">Fillers</Typography>
+      <div className="treatment__image">
+        <Card
+          shadow="#bfbfbf"
+          img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        />
+      </div>
+
+      <div className="treatment__info">
         <Typography type="headline">
           Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor.
         </Typography>
-      </Container>
-      <Button to="/" float="right" text="Boka tid" />
+        <Button to="/" float="right" text="Boka tid" />
+      </div>
       <Container>
         <div>
           <Accordion title="Fillers Juvederm liten (0.5ml)">
