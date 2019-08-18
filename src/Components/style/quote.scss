@@ -1,5 +1,6 @@
 @import "variables";
 .treatment__quote {
+  align-self: end;
   font-style: italic;
   position: relative;
   grid-column: 1;
@@ -21,6 +22,7 @@
   }
 
   @include md {
-    grid-column: 1/3;
+    width: 80%;
+    grid-column: 1;
   }
 }

@@ -4,10 +4,6 @@ import { useTrail, animated } from "react-spring";
 import BotoxRoute from "./Botox";
 import FillersRoute from "./Fillers";
 
-import Container from "../Container";
-import Button from "../Button";
-import Typography from "../Typography";
-
 // styling in nav.scss
 const treatments = [
   {
@@ -35,7 +31,7 @@ function Treatments({ match }) {
   const config = { mass: 5, tension: 2000, friction: 200 };
   const trail = useTrail(treatments.length, {
     config,
-    from: { opacity: 0.5, x: 20, height: "0", delay: 2000 },
+    from: { opacity: 0.5, x: 40, height: "0", delay: 2000 },
     to: { opacity: 1, x: 0, height: "auto" }
   });
 
@@ -53,7 +49,14 @@ function Treatments({ match }) {
                   d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
                 />
               </svg>
-              <h1>{treatments[index].name}</h1>
+
+              <animated.h1
+                style={{
+                  ...rest,
+                  transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+                }}>
+                {treatments[index].name}
+              </animated.h1>
             </NavLink>
           </animated.li>
         ))}

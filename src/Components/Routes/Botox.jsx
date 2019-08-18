@@ -1,10 +1,11 @@
 import React from "react";
-import Button from "../Button";
+
 import Typography from "../Typography";
 import Container from "../Container";
 import Accordion from "../Accordion/Accordion";
 import Card from "../Card";
 import Quote from "../Quote";
+
 const BotoxRoute = () => {
   return (
     <React.Fragment>
@@ -14,13 +15,15 @@ const BotoxRoute = () => {
           img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         />
       </div>
+
       <div className="treatment__info">
         <Typography type="headline">
           Botox används för att ta bort eller motverka rynkor – botox
           kompletterar fillers på ett fantastiskt sätt.
         </Typography>
-        <Button float="right" to="/" text="BOKA TID" />
       </div>
+
+      {/*
       <Quote>
         <Typography type="body">
           Behandling med Botox används inom både sjukvård och skönhetsvård för
@@ -31,34 +34,38 @@ const BotoxRoute = () => {
           Behandlingsresultatet syns inom en vecka.
         </Typography>
       </Quote>
+      */}
 
-      <Container>
-        <div>
-          <Accordion title="Före behandling">
-            <Typography type="body">
-              Kom osminkad. Undvik att ta preparat som ökar
-              blödningsbenägenheten före behandlingen (ex Treo, Voltaren). Dessa
-              preparat ökar risken att du får blåmärken efter injektionen.
-            </Typography>
+      <div className="treatment__accordion">
+        <Container>
+          <Accordion>
+            <div title="Före behandling">
+              <Typography type="body">
+                Kom osminkad. Undvik att ta preparat som ökar
+                blödningsbenägenheten före behandlingen (ex Treo, Voltaren).
+                Dessa preparat ökar risken att du får blåmärken efter
+                injektionen.
+              </Typography>
+            </div>
+            <div title="Efter behandling">
+              <Typography type="body">
+                Fysisk träning rekommenderas inte det närmaste dygnet efter
+                behandling. Gnugga inte på det behandlade området ett dygn
+                efterbehandling. Avstå från smink på det behandlade området ett
+                dygn efter behandling.
+              </Typography>
+            </div>
+            <div title="Eventuella biverkningar">
+              <Typography type="body">
+                De vanligaste biverkningarna är huvudvärk, hudrodnad och
+                svullnad. Biverkningar kommer oftast de första dagarna efter
+                injektionen och är övergående. Kontakta mig eller din läkare vid
+                tecken på oönskad effekt.
+              </Typography>
+            </div>
           </Accordion>
-          <Accordion title="Efter behandling">
-            <Typography type="body">
-              Fysisk träning rekommenderas inte det närmaste dygnet efter
-              behandling. Gnugga inte på det behandlade området ett dygn
-              efterbehandling. Avstå från smink på det behandlade området ett
-              dygn efter behandling.
-            </Typography>
-          </Accordion>
-          <Accordion title="Eventuella biverkningar">
-            <Typography type="body">
-              De vanligaste biverkningarna är huvudvärk, hudrodnad och svullnad.
-              Biverkningar kommer oftast de första dagarna efter injektionen och
-              är övergående. Kontakta mig eller din läkare vid tecken på oönskad
-              effekt.
-            </Typography>
-          </Accordion>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </React.Fragment>
   );
 };

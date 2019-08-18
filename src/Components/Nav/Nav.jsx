@@ -18,18 +18,18 @@ function Nav() {
   const links = [
     {
       to: "/",
-      title: "Hem",
+      label: "Hem",
       type: "NavLink",
       exact: true
     },
     {
       to: "/behandlingar/botox",
-      title: "Behandlingar",
+      label: "Behandlingar",
       type: "NavLink"
     },
     {
       to: "https://www.w3schools.com/tags/tag_i.asp",
-      title: "Boka Online",
+      label: "Boka tid",
       type: "a"
     }
   ];
@@ -50,12 +50,21 @@ function Nav() {
 
       <Hamburger state={state} toggle={toggle} />
 
-      <div className={"overlay " + (state ? "overlay-active" : "")} />
+      <div className={"overlay " + (state ? "overlay-active" : "")}>
+        <div className="wave__before" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#fea4a4"
+            fillOpacity="1"
+            d="M0,256L60,250.7C120,245,240,235,360,197.3C480,160,600,96,720,90.7C840,85,960,139,1080,149.3C1200,160,1320,128,1380,112L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          />
+        </svg>
+      </div>
 
       <ul className={state ? "" : "no-click"}>
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li
-            key={links[index].title}
+            key={links[index].label}
             className="trails-text"
             style={{
               ...rest,
@@ -68,25 +77,15 @@ function Nav() {
                   activeClassName="route-active"
                   onClick={closeMenu}
                   to={links[index].to}>
-                  {links[index].title}
+                  {links[index].label}
                 </NavLink>
               ) : (
-                <a href={links[index].to}>{links[index].title}</a>
+                <a href={links[index].to}>{links[index].label}</a>
               )}
             </animated.div>
           </animated.li>
         ))}
       </ul>
-      <div className="wave__1">
-        <div className="wave__before" />
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#fea4a4"
-            fillOpacity="1"
-            d="M0,256L60,250.7C120,245,240,235,360,197.3C480,160,600,96,720,90.7C840,85,960,139,1080,149.3C1200,160,1320,128,1380,112L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-          />
-        </svg>
-      </div>
     </nav>
   );
 }

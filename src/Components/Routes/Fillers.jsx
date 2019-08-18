@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+
 import Typography from "../Typography";
 import Container from "../Container";
 import Card from "../Card";
@@ -21,10 +21,10 @@ const FillersRoute = () => {
         <Typography type="headline">
           Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor.
         </Typography>
-        <Button to="/" float="right" text="Boka tid" />
       </div>
-      <Container>
-        <div>
+
+      <div className="treatment__accordion">
+        <Container>
           <Accordion title="Fillers Juvederm liten (0.5ml)">
             <div className="accordion__info">
               <strong>Pris</strong>
@@ -67,8 +67,8 @@ const FillersRoute = () => {
               behandling.
             </p>
           </Accordion>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </React.Fragment>
   );
 };
