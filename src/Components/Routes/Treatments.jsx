@@ -36,7 +36,7 @@ function Treatments({ match }) {
   });
 
   return (
-    <div className="treatments">
+    <React.Fragment>
       <ul className="treatments__links">
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li key={treatments[index].id}>
@@ -63,7 +63,7 @@ function Treatments({ match }) {
       </ul>
 
       <Route path={`${match.path}/:treatmentId`} exact component={Treatment} />
-    </div>
+    </React.Fragment>
   );
 }
 

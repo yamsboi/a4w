@@ -18,15 +18,13 @@ function App() {
       <Router>
         <ScrollToTop>
           <Nav />
-          <main>
-            <animated.section style={{ props }} className="content">
-              <Switch>
-                <Route path="/" exact component={Index} title="Home" />
-                <Route path="/behandlingar" component={Treatments} />
-                <Route component={HTTP404} />
-              </Switch>
-            </animated.section>
-          </main>
+          <animated.main style={{ props }}>
+            <Switch>
+              <Route path="/" exact component={Index} title="Home" />
+              <Route path="/behandlingar" component={Treatments} />
+              <Route component={HTTP404} />
+            </Switch>
+          </animated.main>
           <Footer />
         </ScrollToTop>
       </Router>

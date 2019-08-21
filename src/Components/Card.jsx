@@ -2,32 +2,18 @@ import React from "react";
 
 import "./style/card.scss";
 import Typography from "./Typography";
+import Image from "./Image";
 
 const Card = props => {
   return (
     <div className="card-container">
+      <h1 className="card__title">{props.title}</h1>
+
       <section className="top">
-        <div
-          className="card-shadow"
-          style={{
-            backgroundColor: props.shadow
-          }}
-        />
-
-        <Typography type="h1" style={{ color: props.h1Color }}>
-          {props.title}
-        </Typography>
-        <div className="img">
-          <img className="" src={props.img} alt={props.alt} />
-        </div>
-        <Typography className="h3" type="h3" style={{ color: props.h3Color }}>
-          {props.subtitle}
-        </Typography>
+        <Image src={props.img} />
       </section>
 
-      <section className="bottom">
-        <div className="body">{props.children}</div>
-      </section>
+      <section className="bottom">{props.children}</section>
     </div>
   );
 };

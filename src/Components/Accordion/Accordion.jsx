@@ -1,18 +1,39 @@
 import React, { useState, useRef } from "react";
 import Chevron from "./Chevron";
+
+import Typography from "../Typography";
 import "../style/accordion.scss";
 
 function Accordion({ children }) {
   const [activeItem, setActiveItem] = useState("");
   const content = useRef(null);
 
+  function setItem(key) {
+    //Checks whether the clicked accordion is already open, if true, it will close, else a new one will open.
+    if (key === activeItem) {
+      setActiveItem("");
+    } else {
+      setActiveItem(key);
+    }
+  }
+
   return React.Children.map(children, (child, i) => (
     <div className="accordion__section" key={i}>
       <button
         className={"accordion"}
-        onClick={() => setActiveItem(child.props.title)}>
-        <p className="accordion__title">{child.props.title}</p>
-        <Chevron className={activeItem === child.props.title ? "accordion__icon rotate" : "accordion__icon" } width={10} fill={"#777"} />
+        onClick={() => setItem(child.props.title)}>
+        <Typography className="accordion__title" type="headline">
+          {child.props.title}
+        </Typography>
+        <Chevron
+          className={
+            activeItem === child.props.title
+              ? "accordion__icon rotate"
+              : "accordion__icon"
+          }
+          width={10}
+          fill={"#000"}
+        />
       </button>
       <div
         ref={content}

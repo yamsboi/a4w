@@ -3,7 +3,7 @@ import React from "react";
 import Typography from "../Typography";
 import Container from "../Container";
 import Card from "../Card";
-
+import Image from "../Image";
 import PriceTable from "../PriceTable";
 import Accordion from "../Accordion/Accordion";
 
@@ -11,9 +11,9 @@ const FillersRoute = () => {
   return (
     <React.Fragment>
       <div className="treatment__image">
-        <Card
-          shadow="#bfbfbf"
-          img="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        <Image
+          className="image"
+          src="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         />
       </div>
 
@@ -24,8 +24,8 @@ const FillersRoute = () => {
       </div>
 
       <div className="treatment__accordion">
-        <Container>
-          <Accordion title="Fillers Juvederm liten (0.5ml)">
+        <Accordion>
+          <div title="Fillers Juvederm liten (0.5ml)">
             <div className="accordion__info">
               <strong>Pris</strong>
               <p>420 kr</p>
@@ -38,8 +38,8 @@ const FillersRoute = () => {
               Perfekt för dig som vill testa på. Passar enstaka områden så som
               "arga rynkan" eller för att förtydliga läpparnas konturer.
             </Typography>
-          </Accordion>
-          <Accordion title="Fillers Juvederm stor (1ml)">
+          </div>
+          <div title="Fillers Juvederm stor (1ml)">
             <div className="accordion__info">
               <strong>Pris</strong>
               <p>420 kr</p>
@@ -52,8 +52,8 @@ const FillersRoute = () => {
               Passar för exempelvis nasolabialvecken eller för dig som önskar
               effekten av ökad fyllighet i läpparna.
             </Typography>
-          </Accordion>
-          <Accordion title="Efterbehandling">
+          </div>
+          <div title="Efterbehandling">
             <PriceTable />
             <p>
               Fysisk träning rekommenderas inte det närmaste dygnet efter
@@ -66,8 +66,8 @@ const FillersRoute = () => {
               Avstå från smink på det behandlade området ett dygn efter
               behandling.
             </p>
-          </Accordion>
-        </Container>
+          </div>
+        </Accordion>
       </div>
     </React.Fragment>
   );

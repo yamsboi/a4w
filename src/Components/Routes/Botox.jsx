@@ -4,15 +4,16 @@ import Typography from "../Typography";
 import Container from "../Container";
 import Accordion from "../Accordion/Accordion";
 import Card from "../Card";
+import Image from "../Image";
 import Quote from "../Quote";
 
 const BotoxRoute = () => {
   return (
     <React.Fragment>
       <div className="treatment__image">
-        <Card
-          shadow="#395d73"
-          img="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
+        <Image
+          className="image"
+          src="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         />
       </div>
 
@@ -37,34 +38,31 @@ const BotoxRoute = () => {
       */}
 
       <div className="treatment__accordion">
-        <Container>
-          <Accordion>
-            <div title="Före behandling">
-              <Typography type="body">
-                Kom osminkad. Undvik att ta preparat som ökar
-                blödningsbenägenheten före behandlingen (ex Treo, Voltaren).
-                Dessa preparat ökar risken att du får blåmärken efter
-                injektionen.
-              </Typography>
-            </div>
-            <div title="Efter behandling">
-              <Typography type="body">
-                Fysisk träning rekommenderas inte det närmaste dygnet efter
-                behandling. Gnugga inte på det behandlade området ett dygn
-                efterbehandling. Avstå från smink på det behandlade området ett
-                dygn efter behandling.
-              </Typography>
-            </div>
-            <div title="Eventuella biverkningar">
-              <Typography type="body">
-                De vanligaste biverkningarna är huvudvärk, hudrodnad och
-                svullnad. Biverkningar kommer oftast de första dagarna efter
-                injektionen och är övergående. Kontakta mig eller din läkare vid
-                tecken på oönskad effekt.
-              </Typography>
-            </div>
-          </Accordion>
-        </Container>
+        <Accordion>
+          <div title="Före behandling">
+            <Typography type="body">
+              Kom osminkad. Undvik att ta preparat som ökar
+              blödningsbenägenheten före behandlingen (ex Treo, Voltaren). Dessa
+              preparat ökar risken att du får blåmärken efter injektionen.
+            </Typography>
+          </div>
+          <div title="Efter behandling">
+            <Typography type="body">
+              Fysisk träning rekommenderas inte det närmaste dygnet efter
+              behandling. Gnugga inte på det behandlade området ett dygn
+              efterbehandling. Avstå från smink på det behandlade området ett
+              dygn efter behandling.
+            </Typography>
+          </div>
+          <div title="Eventuella biverkningar">
+            <Typography type="body">
+              De vanligaste biverkningarna är huvudvärk, hudrodnad och svullnad.
+              Biverkningar kommer oftast de första dagarna efter injektionen och
+              är övergående. Kontakta mig eller din läkare vid tecken på oönskad
+              effekt.
+            </Typography>
+          </div>
+        </Accordion>
       </div>
     </React.Fragment>
   );
