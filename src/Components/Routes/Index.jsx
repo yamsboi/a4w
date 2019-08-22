@@ -3,8 +3,6 @@ import React from "react";
 import Card from "../Card";
 import Typography from "../Typography";
 import Button from "../Button";
-import Container from "../Container";
-import PriceTable from "../PriceTable";
 
 function Index() {
   return (
@@ -33,9 +31,7 @@ function Index() {
         title="Botox"
         alt="Botox"
         subtitle="Botox">
-        <Typography type="headline">
-          Slappna av i ansiktet med hjälp av Botox
-        </Typography>
+        <Typography type="headline">Slappna av i ansiktet med Botox</Typography>
         <Button to="/botox" float="right" text="läs mer" />
       </Card>
 

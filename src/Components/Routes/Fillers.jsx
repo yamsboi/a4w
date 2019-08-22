@@ -1,8 +1,6 @@
 import React from "react";
 
 import Typography from "../Typography";
-import Container from "../Container";
-import Card from "../Card";
 import Image from "../Image";
 import PriceTable from "../PriceTable";
 import Accordion from "../Accordion/Accordion";

@@ -1,11 +1,8 @@
 import React from "react";
 
 import Typography from "../Typography";
-import Container from "../Container";
 import Accordion from "../Accordion/Accordion";
-import Card from "../Card";
 import Image from "../Image";
-import Quote from "../Quote";
 
 const BotoxRoute = () => {
   return (

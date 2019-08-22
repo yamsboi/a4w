@@ -31,12 +31,13 @@ main {
   padding-right: 10vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 10vw;
 
   @include md {
     grid-gap: 15vh;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+
     padding-top: 30px;
   }
 }
