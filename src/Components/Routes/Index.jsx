@@ -8,7 +8,6 @@ function Index() {
   return (
     <React.Fragment>
       <section className="intro">
-        <h2>Aesthetic For Wellness</h2>
         <Typography align="left" type="subhead">
           Behandlingar med Botox och fillers som utförs av legitimerad
           sjuksköterska. Certifierad av MyBeautyAcademy. Hembesök är möjligt och
@@ -20,9 +19,7 @@ function Index() {
         title="Fillers"
         alt="Placeholder"
         subtitle="Fillers">
-        <Typography type="headline">
-          Fyll dina läppar, nasalbialväck, ögonlock
-        </Typography>
+        <Typography type="headline">Fyll dina läppar</Typography>
 
         <Button to="/fillers" float="right" text="läs mer" />
       </Card>

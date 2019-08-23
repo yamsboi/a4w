@@ -48,7 +48,7 @@ nav {
     transition-delay: 250ms;
 
     @include md {
-      height: 60vh;
+      display: none;
     }
 
     .wave__before {

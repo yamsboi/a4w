@@ -6,12 +6,12 @@ import Image from "./Image";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 function Card(props) {
-  const [elementPosition, setElementPosition] = useState({ y: 500 });
+  const [elementPosition, setElementPosition] = useState(300);
   const elementRef = useRef();
 
   useScrollPosition(
     ({ currPos }) => {
-      setElementPosition(currPos);
+      setElementPosition(currPos.y / 2);
       console.log(currPos.y);
     },
     [],
@@ -24,7 +24,7 @@ function Card(props) {
         ref={elementRef}
         className="card__title"
         style={{
-          transform: `translate( ${elementPosition.y - 500}px, -50% )`
+          transform: `translate( ${elementPosition - 300}px, -50% )`
         }}>
         {props.title}
       </h1>
