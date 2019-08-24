@@ -1,19 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 @import "variables";
+
+.accordion__container {
+  border: solid 1px black;
+}
+
 /* Style the accordion section */
 .accordion__section {
-  background-color: $primary;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-
   border-radius: 5px;
+
+  transition: 100ms;
 
   &:nth-child(1) {
     margin-top: 0;
   }
+
+  &:hover {
+    background-color: #efefef;
+  }
 }
 
+.accordion__active {
+  &:hover {
+    background-color: transparent;
+  }
+}
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
   background-color: transparent;
