@@ -10,6 +10,7 @@ svg {
 }
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   // background-color: #f1f1f1;
@@ -37,8 +38,6 @@ main {
   @include md {
     grid-gap: 15vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-
     padding-top: 30px;
   }
 }
@@ -48,7 +47,14 @@ main {
 }
 
 .treatment__info {
+  display: flex;
+  flex-direction: column-reverse;
   align-self: end;
+  height: 46vw;
+
+  @include md {
+    height: auto;
+  }
 }
 .treatment__image {
   grid-column: 1;

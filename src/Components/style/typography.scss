@@ -39,7 +39,7 @@ a {
 }
 .subhead {
   margin: 0;
-  font-size: 17px;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: -0.374px;
   line-height: 25px;
@@ -52,6 +52,7 @@ a {
   line-height: 1.5625;
   font-family: acumin-pro, sans-serif;
   color: #191919;
+  margin: 0;
 }
 
 .stroke {
@@ -66,10 +67,4 @@ a {
 .treatments__portal {
   display: flex;
   align-items: center;
-}
-@include md {
-  .headline {
-    width: 80%;
-    text-align: left;
-  }
 }

@@ -8,7 +8,7 @@ function Index() {
   return (
     <React.Fragment>
       <section className="intro">
-        <Typography align="left" type="subhead">
+        <Typography align="left" type="body">
           Behandlingar med Botox och fillers som utförs av legitimerad
           sjuksköterska. Certifierad av MyBeautyAcademy. Hembesök är möjligt och
           kan diskuteras via email eller telefon.
@@ -19,7 +19,14 @@ function Index() {
         title="Fillers"
         alt="Placeholder"
         subtitle="Fillers">
-        <Typography type="headline">Fyll dina läppar</Typography>
+        <Typography type="headline" style={{ display: "flex" }}>
+          Fyll dina
+          <ul className="fillers__treatments__list">
+            <li>läppar</li>
+            <li>nasalbialväck</li>
+            <li>rynkor</li>
+          </ul>
+        </Typography>
 
         <Button to="/fillers" float="right" text="läs mer" />
       </Card>

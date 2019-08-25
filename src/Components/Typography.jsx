@@ -8,7 +8,7 @@ const Typography = props => {
   switch (props.type) {
     case "headline":
       return (
-        <h2 className="headline" style={{ textAlign: props.align }}>
+        <h2 className="headline" style={{ textAlign: props.align }} {...props}>
           {props.children}
         </h2>
       );

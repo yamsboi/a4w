@@ -20,7 +20,17 @@ const FillersRoute = () => {
           Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor.
         </Typography>
       </div>
-
+      <Typography type="body">
+        Behandlingen ger en omedelbar utfyllnad av rynkor eller konturer i ditt
+        ansikte. Vi använder oss av gelen Restylane/Juvederm för att temporärt
+        fylla ut dina rynkor eller läppar. Gelen är som sagt biologiskt
+        nedbrytbar och orsakar inga allergiska reaktioner utan anpassar sig
+        efter dina naturliga vävnader. Juvederm är ett erkänt och ledande
+        varumärke ur ett globalt perspektiv och har använts vid över 16 miljoner
+        fillerbehandlingar för ansiktet. Med fillers kan du reducera och släta
+        ut ansiktslinjer, rynkor och veck men även skapa tydligare definition av
+        munnen och ansiktsformen.
+      </Typography>
       <div className="treatment__accordion">
         <Accordion>
           <div title="Fillers Juvederm liten (0.5ml)">

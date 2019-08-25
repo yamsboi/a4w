@@ -23,18 +23,16 @@ function Accordion({ children }) {
         {React.Children.map(children, (child, i) => (
           <tr
             className={`accordion__section ${
-              activeItem === child.props.title ? "accordion__active" : ""
+              activeItem === i ? "accordion__active" : ""
             }`}
             key={i}>
-            <th
-              className={"accordion"}
-              onClick={() => setItem(child.props.title)}>
-              <Typography className="accordion__title" type="headline">
+            <th className={"accordion"} onClick={() => setItem(i)}>
+              <Typography className="accordion__title" type="subhead">
                 {child.props.title}
               </Typography>
               <Chevron
                 className={
-                  activeItem === child.props.title
+                  activeItem === i
                     ? "accordion__icon rotate"
                     : "accordion__icon"
                 }
@@ -47,13 +45,9 @@ function Accordion({ children }) {
               className="accordion__content"
               style={{
                 maxHeight:
-                  activeItem === child.props.title
-                    ? `${content.current.scrollHeight}px`
-                    : "0px"
+                  activeItem === i ? `${content.current.scrollHeight}px` : "0px"
               }}>
-              <div className="accordion__text">
-                <div className="accordion__children">{child}</div>
-              </div>
+              {child}
             </td>
           </tr>
         ))}

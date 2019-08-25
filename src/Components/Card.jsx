@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 
 import "./style/card.scss";
 import Image from "./Image";
-
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 function Card(props) {
@@ -11,8 +10,8 @@ function Card(props) {
 
   useScrollPosition(
     ({ currPos }) => {
+      console.log(currPos);
       setElementPosition(currPos.y / 2);
-      console.log(currPos.y);
     },
     [],
     elementRef

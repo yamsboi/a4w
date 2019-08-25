@@ -33,7 +33,17 @@ const BotoxRoute = () => {
         </Typography>
       </Quote>
       */}
-
+      <Typography type="body">
+        Botulinumtoxin är ett kraftigt muskelförlamande ämne som har använts
+        inom medicinen sedan 1970-talet i många olika sammanhang. Sedan mer än
+        tio år tillbaka används det även för korrektion av rynkor i ansiktet
+        samt för att motverka arm- och handsvett. När botox sprutas in i
+        muskulaturen försvagas mimiken eftersom musklerna inte kan dra ihop sig
+        lika mycket. Det medför att veck eller så kallade vredes- eller
+        bekymmersrynkor inte uppstår – och att de försvinner på framför allt
+        yngre patienter. Behandlingen är snabb, tämligen smärtfri och tar inte
+        mer än några minuter att utföra.
+      </Typography>
       <div className="treatment__accordion">
         <Accordion>
           <div title="Före behandling">
