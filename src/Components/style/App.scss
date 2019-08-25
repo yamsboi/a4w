@@ -73,6 +73,8 @@ main {
 
   @include md {
     grid-column: 2;
+
+    min-height: 338px;
   }
 }
 
