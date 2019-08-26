@@ -10,7 +10,6 @@ svg {
 }
 html {
   height: 100%;
-  overflow-x: hidden;
 }
 body {
   // background-color: #f1f1f1;
@@ -56,6 +55,7 @@ main {
     height: auto;
   }
 }
+
 .treatment__image {
   grid-column: 1;
   grid-row: 3;

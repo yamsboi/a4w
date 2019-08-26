@@ -1,29 +1,40 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 import "./style/card.scss";
 import Image from "./Image";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 function Card(props) {
-  const [elementPosition, setElementPosition] = useState(300);
+  const [elementPosition, setElementPosition] = useState();
+  const [offSet, setOffset] = useState(0);
   const elementRef = useRef();
 
+  useLayoutEffect(
+    () => (
+      setElementPosition(
+        elementRef.current.getBoundingClientRect().y.toFixed()
+      ),
+      setOffset(elementRef.current.offsetTop)
+    ),
+    []
+  );
+
+  //won't work if html tag has overflow: hidden;
   useScrollPosition(
-    ({ currPos }) => {
-      console.log(currPos);
-      setElementPosition(currPos.y / 2);
+    ({ prevPos, currPos }) => {
+      setElementPosition(currPos.y.toFixed());
     },
     [],
     elementRef
   );
 
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={() => console.log(elementRef)}>
       <h1
         ref={elementRef}
         className="card__title"
         style={{
-          transform: `translate( ${elementPosition - 300}px, -50% )`
+          transform: `translate( ${elementPosition - offSet - offSet}px, -50% )`
         }}>
         {props.title}
       </h1>
