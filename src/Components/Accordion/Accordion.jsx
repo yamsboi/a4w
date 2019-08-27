@@ -18,7 +18,7 @@ function Accordion({ children }) {
   }
 
   return (
-    <table className="accordion__container">
+    <table className="accordion">
       <tbody>
         {React.Children.map(children, (child, i) => (
           <tr
@@ -26,10 +26,8 @@ function Accordion({ children }) {
               activeItem === i ? "accordion__active" : ""
             }`}
             key={i}>
-            <th className={"accordion"} onClick={() => setItem(i)}>
-              <Typography className="accordion__title" type="subhead">
-                {child.props.title}
-              </Typography>
+            <th className="accordion__title" onClick={() => setItem(i)}>
+              <Typography type="subhead">{child.props.title}</Typography>
               <Chevron
                 className={
                   activeItem === i

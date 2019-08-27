@@ -1,5 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { useScrollPosition } from "./hooks/useScrollPosition";
+import { useSpring, animated } from "react-spring";
 
 import "./style/card.scss";
 import Image from "./Image";
@@ -8,6 +9,11 @@ function Card(props) {
   const [elementPosition, setElementPosition] = useState();
   const [offSet, setOffset] = useState(0);
   const elementRef = useRef();
+
+  const spring = useSpring({
+    to: { opacity: 1, transform: "translateY(0px)" },
+    from: { opacity: 0, transform: "translateY(50px)" }
+  });
 
   useLayoutEffect(
     () => (
@@ -29,7 +35,10 @@ function Card(props) {
   );
 
   return (
-    <div className="card-container" onClick={() => console.log(elementRef)}>
+    <animated.div
+      style={spring}
+      className="card-container"
+      onClick={() => console.log(elementRef)}>
       <h1
         ref={elementRef}
         className="card__title"
@@ -44,7 +53,7 @@ function Card(props) {
       </section>
 
       <section className="bottom">{props.children}</section>
-    </div>
+    </animated.div>
   );
 }
 

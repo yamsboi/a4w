@@ -60,6 +60,9 @@ main {
   grid-column: 1;
   grid-row: 3;
 
+  display: flex;
+  flex-direction: column-reverse;
+
   @include md {
     grid-column: 2;
     grid-row: 1 / 3;

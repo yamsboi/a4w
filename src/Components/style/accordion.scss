@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 @import "variables";
 
-.accordion__container {
+.accordion {
   border: solid 1px black;
 }
 
@@ -28,7 +28,7 @@
   }
 }
 /* Style the buttons that are used to open and close the accordion panel */
-.accordion {
+.accordion__title {
   background-color: transparent;
 
   cursor: pointer;
@@ -39,15 +39,13 @@
   border: none;
   outline: none;
   transition: background-color 0.2s ease;
+
+  * {
+    &::selection {
+      background: transparent;
+    }
+  }
 }
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-// .accordion:hover,
-// .active {
-//   // text-decoration: underline wavy $primary;
-// }
-
-/* Style the accordion content title */
 
 .accordion__icon {
   margin-left: auto;
