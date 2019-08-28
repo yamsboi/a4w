@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./style/image.scss";
-
 import { useSpring, animated } from "react-spring";
+
+import "./style/image.scss";
 
 const Image = props => {
   const spring = useSpring({

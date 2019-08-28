@@ -15,12 +15,18 @@ function Card(props) {
     from: { opacity: 0, transform: "translateY(50px)" }
   });
 
+  const opacity = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 300
+  });
+
   useLayoutEffect(
     () => (
       setElementPosition(
         elementRef.current.getBoundingClientRect().y.toFixed()
       ),
-      setOffset(elementRef.current.offsetTop)
+      setOffset(elementRef.current.getBoundingClientRect().y.toFixed())
     ),
     []
   );
@@ -43,7 +49,7 @@ function Card(props) {
         ref={elementRef}
         className="card__title"
         style={{
-          transform: `translate( ${elementPosition - offSet - offSet}px, -50% )`
+          transform: `translate( ${elementPosition / 3}px, -50% )`
         }}>
         {props.title}
       </h1>
@@ -52,7 +58,9 @@ function Card(props) {
         <Image src={props.img} />
       </section>
 
-      <section className="bottom">{props.children}</section>
+      <animated.section style={opacity} className="bottom">
+        {props.children}
+      </animated.section>
     </animated.div>
   );
 }

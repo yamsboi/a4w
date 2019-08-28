@@ -4,8 +4,15 @@ import Typography from "../Typography";
 import Image from "../Image";
 import PriceTable from "../PriceTable";
 import Accordion from "../Accordion/Accordion";
+import { useSpring, animated } from "react-spring";
 
 const FillersRoute = () => {
+  const opacity = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 300
+  });
+
   return (
     <React.Fragment>
       <div className="treatment__image">
@@ -15,11 +22,18 @@ const FillersRoute = () => {
         />
       </div>
 
-      <div className="treatment__info">
+      <div className="treatment__image">
+        <Image
+          className="image"
+          src="https://images.pexels.com/photos/1778821/pexels-photo-1778821.jpeg?cs=srgb&dl=attractive-beautiful-beauty-1778821.jpg&fm=jpg"
+        />
+      </div>
+
+      <animated.div style={opacity} className="treatment__info">
         <Typography type="headline">
           Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor.
         </Typography>
-      </div>
+      </animated.div>
       <Typography type="body">
         Behandlingen ger en omedelbar utfyllnad av rynkor eller konturer i ditt
         ansikte. Vi använder oss av gelen Restylane/Juvederm för att temporärt
@@ -31,6 +45,33 @@ const FillersRoute = () => {
         ut ansiktslinjer, rynkor och veck men även skapa tydligare definition av
         munnen och ansiktsformen.
       </Typography>
+      <div className="treatment__accordion">
+        <Accordion>
+          <div title="Före behandling">
+            <Typography type="body">
+              Kom osminkad. Undvik att ta preparat som ökar
+              blödningsbenägenheten före behandlingen (ex Treo, Voltaren). Dessa
+              preparat ökar risken att du får blåmärken efter injektionen.
+            </Typography>
+          </div>
+          <div title="Efter behandling">
+            <Typography type="body">
+              Fysisk träning rekommenderas inte det närmaste dygnet efter
+              behandling. Gnugga inte på det behandlade området ett dygn
+              efterbehandling. Avstå från smink på det behandlade området ett
+              dygn efter behandling.
+            </Typography>
+          </div>
+          <div title="Eventuella biverkningar">
+            <Typography type="body">
+              De vanligaste biverkningarna är huvudvärk, hudrodnad och svullnad.
+              Biverkningar kommer oftast de första dagarna efter injektionen och
+              är övergående. Kontakta mig eller din läkare vid tecken på oönskad
+              effekt.
+            </Typography>
+          </div>
+        </Accordion>
+      </div>
       <div className="treatment__accordion">
         <Accordion>
           <div title="Fillers Juvederm liten (0.5ml)">

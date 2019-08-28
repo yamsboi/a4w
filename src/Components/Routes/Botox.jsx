@@ -4,7 +4,15 @@ import Typography from "../Typography";
 import Accordion from "../Accordion/Accordion";
 import Image from "../Image";
 
+import { useSpring, animated } from "react-spring";
+
 const BotoxRoute = () => {
+  const opacity = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 300
+  });
+
   return (
     <React.Fragment>
       <div className="treatment__image">
@@ -13,13 +21,19 @@ const BotoxRoute = () => {
           src="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
         />
       </div>
+      <div className="treatment__image">
+        <Image
+          className="image"
+          src="https://images.pexels.com/photos/2744193/pexels-photo-2744193.jpeg?cs=srgb&dl=attractive-beautiful-beauty-2744193.jpg&fm=jpg"
+        />
+      </div>
 
-      <div className="treatment__info">
+      <animated.div style={opacity} className="treatment__info">
         <Typography type="headline">
           Botox används för att ta bort eller motverka rynkor – botox
           kompletterar fillers på ett fantastiskt sätt.
         </Typography>
-      </div>
+      </animated.div>
 
       {/*
       <Quote>

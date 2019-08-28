@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Route } from "react-router-dom";
 import { useTrail, animated } from "react-spring";
+
 import BotoxRoute from "./Botox";
 import FillersRoute from "./Fillers";
 
@@ -27,7 +28,6 @@ function Treatment({ match }) {
 }
 
 function Treatments({ match }) {
-  //React-Spring
   const config = { mass: 5, tension: 2000, friction: 200 };
   const trail = useTrail(treatments.length, {
     config,
