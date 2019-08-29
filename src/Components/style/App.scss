@@ -45,10 +45,11 @@ main {
   height: 100vh;
 }
 
-.treatment__info {
+.treatment__catchphrase {
   display: flex;
   flex-direction: column-reverse;
   align-self: end;
+  grid-row: 2;
   height: 46vw;
 
   @include md {
@@ -59,7 +60,6 @@ main {
 
 .treatment__image {
   grid-column: 1;
-  grid-row: 3;
 
   display: flex;
   flex-direction: column-reverse;

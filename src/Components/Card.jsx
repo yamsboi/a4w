@@ -7,7 +7,6 @@ import Image from "./Image";
 
 function Card(props) {
   const [elementPosition, setElementPosition] = useState();
-  const [offSet, setOffset] = useState(0);
   const elementRef = useRef();
 
   const spring = useSpring({
@@ -22,12 +21,10 @@ function Card(props) {
   });
 
   useLayoutEffect(
-    () => (
+    () =>
       setElementPosition(
         elementRef.current.getBoundingClientRect().y.toFixed()
       ),
-      setOffset(elementRef.current.getBoundingClientRect().y.toFixed())
-    ),
     []
   );
 

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 import Card from "../Card";
 import Typography from "../Typography";
-import Button from "../Button";
 
 import { useSpring, animated } from "react-spring";
 
@@ -27,7 +26,7 @@ function Index() {
         title="Fillers"
         alt="Placeholder"
         subtitle="Fillers">
-        <NavLink>
+        <NavLink to="/behandlingar/fillers">
           <Typography type="headline" style={{ display: "flex" }}>
             Fyll dina
             <ul className="fillers__treatments__list">
@@ -43,7 +42,7 @@ function Index() {
         title="Botox"
         alt="Botox"
         subtitle="Botox">
-        <NavLink to="/">
+        <NavLink to="/behandlingar/botox">
           <Typography type="headline">
             Slappna av i ansiktet med Botox
           </Typography>

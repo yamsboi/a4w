@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 
 import Typography from "../Typography";
 import Image from "../Image";
 import PriceTable from "../PriceTable";
 import Accordion from "../Accordion/Accordion";
 import { useSpring, animated } from "react-spring";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 const FillersRoute = () => {
+  const [elementPosition, setElementPosition] = useState();
+  const elementRef = useRef();
   const opacity = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     delay: 300
   });
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      setElementPosition(currPos.y.toFixed());
+      console.log(currPos.y);
+    },
+    [],
+    elementRef,
+    true
+  );
+
+  useLayoutEffect(
+    () =>
+      setElementPosition(
+        elementRef.current.getBoundingClientRect().y.toFixed()
+      ),
+    []
+  );
 
   return (
     <React.Fragment>
@@ -29,22 +50,28 @@ const FillersRoute = () => {
         />
       </div>
 
-      <animated.div style={opacity} className="treatment__info">
+      <animated.div style={opacity} className="treatment__catchphrase">
         <Typography type="headline">
           Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor.
         </Typography>
       </animated.div>
-      <Typography type="body">
-        Behandlingen ger en omedelbar utfyllnad av rynkor eller konturer i ditt
-        ansikte. Vi använder oss av gelen Restylane/Juvederm för att temporärt
-        fylla ut dina rynkor eller läppar. Gelen är som sagt biologiskt
-        nedbrytbar och orsakar inga allergiska reaktioner utan anpassar sig
-        efter dina naturliga vävnader. Juvederm är ett erkänt och ledande
-        varumärke ur ett globalt perspektiv och har använts vid över 16 miljoner
-        fillerbehandlingar för ansiktet. Med fillers kan du reducera och släta
-        ut ansiktslinjer, rynkor och veck men även skapa tydligare definition av
-        munnen och ansiktsformen.
-      </Typography>
+      <div
+        ref={elementRef}
+        style={{
+          marginTop: `${elementPosition / 5}px`
+        }}>
+        <Typography type="body">
+          Behandlingen ger en omedelbar utfyllnad av rynkor eller konturer i
+          ditt ansikte. Vi använder oss av gelen Restylane/Juvederm för att
+          temporärt fylla ut dina rynkor eller läppar. Gelen är som sagt
+          biologiskt nedbrytbar och orsakar inga allergiska reaktioner utan
+          anpassar sig efter dina naturliga vävnader. Juvederm är ett erkänt och
+          ledande varumärke ur ett globalt perspektiv och har använts vid över
+          16 miljoner fillerbehandlingar för ansiktet. Med fillers kan du
+          reducera och släta ut ansiktslinjer, rynkor och veck men även skapa
+          tydligare definition av munnen och ansiktsformen.
+        </Typography>
+      </div>
       <div className="treatment__accordion">
         <Accordion>
           <div title="Före behandling">
