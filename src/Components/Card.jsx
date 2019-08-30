@@ -42,14 +42,14 @@ function Card(props) {
       style={spring}
       className="card-container"
       onClick={() => console.log(elementRef)}>
-      <h1
+      <div
         ref={elementRef}
         className="card__title"
         style={{
           transform: `translate( ${elementPosition / 3}px, -50% )`
         }}>
         {props.title}
-      </h1>
+      </div>
 
       <section className="top">
         <Image src={props.img} />

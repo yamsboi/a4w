@@ -82,9 +82,13 @@
 }
 
 .card__title {
+  -webkit-font-smoothing: antialiased;
+  font-family: neue-haas-grotesk-display, sans-serif;
+
   margin-left: -10vw;
   font-size: 20vw;
-  color: #9898980f;
+  font-weight: 600;
+  color: #ff0072b5;
   position: absolute;
   left: 50%;
   top: 50%;

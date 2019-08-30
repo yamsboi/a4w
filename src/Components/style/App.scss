@@ -56,6 +56,11 @@ main {
     grid-row: 2;
     height: auto;
   }
+
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .treatment__image {

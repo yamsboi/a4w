@@ -3,15 +3,39 @@ import Typography from "../Typography";
 import Accordion from "../Accordion/Accordion";
 import Image from "../Image";
 
-import { useSpring, animated } from "react-spring";
+import { useSpring, useTrail, animated } from "react-spring";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 const BotoxRoute = () => {
   const [elementPosition, setElementPosition] = useState();
   const elementRef = useRef();
-  const opacity = useSpring({
-    to: { opacity: 1 },
-    from: { opacity: 0 },
-    delay: 300
+  const config = { mass: 5, tension: 2000, friction: 200 };
+
+  const words = [
+    "Botox",
+    "används",
+    "för",
+    "att",
+    "ta",
+    "bort",
+    "eller",
+    "motverka",
+    "rynkor",
+    "-",
+    "botox",
+    "kompletterar",
+    "fillers",
+    "på",
+    "ett",
+    "fantastiskt",
+    "sätt",
+    "."
+  ];
+  const trail = useTrail(words.length, {
+    config,
+    opacity: 1,
+    x: 0,
+    height: 80,
+    from: { opacity: 0, x: 20, height: 0 }
   });
 
   useScrollPosition(
@@ -46,13 +70,19 @@ const BotoxRoute = () => {
           src="https://images.pexels.com/photos/2744193/pexels-photo-2744193.jpeg?cs=srgb&dl=attractive-beautiful-beauty-2744193.jpg&fm=jpg"
         />
       </div>
-
-      <animated.div style={opacity} className="treatment__catchphrase">
+      <div className="treatment__catchphrase">
         <Typography type="headline">
-          Botox används för att ta bort eller motverka rynkor – botox
-          kompletterar fillers på ett fantastiskt sätt.
+          {trail.map(({ x, height, ...rest }, index) => (
+            <animated.span
+              key={words[index]}
+              style={{
+                ...rest
+              }}>
+              &nbsp;{words[index]}
+            </animated.span>
+          ))}
         </Typography>
-      </animated.div>
+      </div>
 
       <div
         ref={elementRef}

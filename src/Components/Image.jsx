@@ -10,9 +10,14 @@ const Image = props => {
     from: { height: "70%" }
   });
 
+  const zoom = useSpring({
+    to: { transform: "scale(1)" },
+    from: { transform: "scale(1.2)" }
+  });
+
   return (
     <animated.div style={spring} className="image__container">
-      <img className="image" src={props.src} alt={props.alt} />
+      <img className="image" style={zoom} src={props.src} alt="" />
     </animated.div>
   );
 };

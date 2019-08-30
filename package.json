@@ -1,5 +1,6 @@
 {
   "name": "a4w",
+  "homepage": "http://localhost/~sebastianermilin/shared/a4w/build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

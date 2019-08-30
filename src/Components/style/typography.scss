@@ -12,6 +12,7 @@ a {
   -webkit-font-smoothing: antialiased;
   font-family: neue-haas-grotesk-display, sans-serif;
   font-style: normal;
+  font-display: auto;
 }
 
 h1 {
@@ -24,8 +25,13 @@ h1 {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #666;
   font-weight: 400;
+  transition: 100ms;
+
+  &:hover {
+    color: black;
+  }
 }
 
 .headline {
