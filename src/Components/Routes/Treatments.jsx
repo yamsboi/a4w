@@ -31,7 +31,7 @@ function Treatments({ match }) {
   const config = { mass: 5, tension: 2000, friction: 200 };
   const trail = useTrail(treatments.length, {
     config,
-    from: { opacity: 0.5, x: 40, height: "0", delay: 2000 },
+    from: { opacity: 0.5, x: 50, height: "0", delay: 2000 },
     to: { opacity: 1, x: 0, height: "auto" }
   });
 
@@ -53,7 +53,7 @@ function Treatments({ match }) {
               <animated.h1
                 style={{
                   ...rest,
-                  transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+                  transform: x.interpolate(x => `translate(-${x}px,0px)`)
                 }}>
                 {treatments[index].name}
               </animated.h1>

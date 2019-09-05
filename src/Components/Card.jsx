@@ -7,6 +7,7 @@ import Image from "./Image";
 
 function Card(props) {
   const [elementPosition, setElementPosition] = useState();
+
   const elementRef = useRef();
 
   const spring = useSpring({
@@ -20,11 +21,17 @@ function Card(props) {
     delay: 300
   });
 
+  const sweep = useSpring({
+    to: { left: "50%" },
+    from: { left: "100%" }
+  });
+
   useLayoutEffect(
     () =>
       setElementPosition(
-        elementRef.current.getBoundingClientRect().y.toFixed()
+        elementRef.current.getBoundingClientRect().top.toFixed() / 2
       ),
+
     []
   );
 
@@ -39,15 +46,16 @@ function Card(props) {
 
   return (
     <animated.div
+      key={elementRef}
       style={spring}
       className="card-container"
       onClick={() => console.log(elementRef)}>
       <div
         ref={elementRef}
         className="card__title"
-        style={{
-          transform: `translate( ${elementPosition / 3}px, -50% )`
-        }}>
+        style={
+          (sweep, { transform: `translate( ${elementPosition / 3}px, -50% )` })
+        }>
         {props.title}
       </div>
 

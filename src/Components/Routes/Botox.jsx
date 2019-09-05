@@ -3,12 +3,12 @@ import Typography from "../Typography";
 import Accordion from "../Accordion/Accordion";
 import Image from "../Image";
 
-import { useSpring, useTrail, animated } from "react-spring";
+import { useTrail, animated } from "react-spring";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 const BotoxRoute = () => {
   const [elementPosition, setElementPosition] = useState();
   const elementRef = useRef();
-  const config = { mass: 5, tension: 2000, friction: 200 };
+  const config = { mass: 1, tension: 300, friction: 25 };
 
   const words = [
     "Botox",
@@ -27,8 +27,7 @@ const BotoxRoute = () => {
     "på",
     "ett",
     "fantastiskt",
-    "sätt",
-    "."
+    "sätt"
   ];
   const trail = useTrail(words.length, {
     config,
@@ -41,7 +40,7 @@ const BotoxRoute = () => {
   useScrollPosition(
     ({ prevPos, currPos }) => {
       setElementPosition(currPos.y.toFixed());
-      console.log(currPos.y);
+      // console.log(currPos.y);
     },
     [],
     elementRef,
@@ -87,7 +86,7 @@ const BotoxRoute = () => {
       <div
         ref={elementRef}
         style={{
-          marginTop: `${elementPosition / 5}px`
+          transform: `translateY(${elementPosition / 5}px)`
         }}>
         <Typography type="body">
           Botulinumtoxin är ett kraftigt muskelförlamande ämne som har använts

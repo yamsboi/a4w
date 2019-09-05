@@ -26,7 +26,7 @@ function Accordion({ children }) {
               activeItem === i ? "accordion__active" : ""
             }`}
             key={i}>
-            <th className="accordion__title" onClick={() => setItem(i)}>
+            <button className="accordion__button" onClick={() => setItem(i)}>
               <Typography type="subhead">{child.props.title}</Typography>
               <Chevron
                 className={
@@ -37,7 +37,7 @@ function Accordion({ children }) {
                 width={10}
                 fill={"#000"}
               />
-            </th>
+            </button>
             <td
               ref={content}
               className="accordion__content"

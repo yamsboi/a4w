@@ -13,6 +13,7 @@ a {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-style: normal;
   font-display: auto;
+  color: #231f20;
 }
 
 h1 {
@@ -25,7 +26,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: #666;
+
   font-weight: 400;
   transition: 100ms;
 
@@ -35,13 +36,15 @@ a {
 }
 
 .headline {
-  color: rgb(17, 17, 17);
+  // color: rgb(17, 17, 17);
+
   margin: 0;
   font-size: 7vw;
   font-weight: 600;
   letter-spacing: 0.216px;
   line-height: 2.5rem;
   text-align: left;
+  padding-bottom: 5px;
 
   @include md {
     font-size: 1.75rem;
@@ -54,23 +57,23 @@ a {
   font-weight: 400;
   letter-spacing: -0.374px;
   line-height: 25px;
-  color: rgb(17, 17, 17);
+  // color: rgb(17, 17, 17);
   text-align: left;
 }
 
 .body {
   -webkit-font-smoothing: antialiased;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.5625;
   font-family: acumin-pro, sans-serif;
-  color: #191919;
+  // color: #191919;
   margin: 0;
 }
 
 .stroke {
   color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: #231f20;
 }
 
 .skew {

@@ -15,7 +15,7 @@ function Index() {
   return (
     <React.Fragment>
       <animated.section style={spring} className="intro">
-        <Typography align="left" type="body">
+        <Typography key={"title"} align="left" type="body">
           Behandlingar med Botox och fillers som utförs av en legitimerad
           sjuksköterska som är certifierad av MyBeautyAcademy. Hembesök är
           möjligt och kan diskuteras via email eller telefon.
@@ -27,13 +27,16 @@ function Index() {
         alt="Placeholder"
         subtitle="Fillers">
         <NavLink to="/behandlingar/fillers">
-          <Typography type="headline" style={{ display: "flex" }}>
+          <Typography type="headline">
             Fyll dina
             <ul className="fillers__treatments__list">
               <li>läppar</li>
               <li>nasalbialväck</li>
               <li>rynkor</li>
             </ul>
+          </Typography>
+          <Typography type="body">
+            Fyll ut dina läppar eller rynkor med biologiskt nedbrytbara sprutor
           </Typography>
         </NavLink>
       </Card>
@@ -45,6 +48,10 @@ function Index() {
         <NavLink to="/behandlingar/botox">
           <Typography type="headline">
             Slappna av i ansiktet med Botox
+          </Typography>
+          <Typography type="body">
+            Botox används för att ta bort eller motverka rynkor - botox
+            kompletterar fillers på ett fantastiskt sätt
           </Typography>
         </NavLink>
       </Card>

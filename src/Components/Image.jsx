@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useSpring, animated } from "react-spring";
+import { CSSTransitionGroup } from "react-transition-group"; // ES6
 
 import "./style/image.scss";
 
@@ -10,15 +11,15 @@ const Image = props => {
     from: { height: "70%" }
   });
 
-  const zoom = useSpring({
-    to: { transform: "scale(1)" },
-    from: { transform: "scale(1.2)" }
-  });
-
   return (
-    <animated.div style={spring} className="image__container">
-      <img className="image" style={zoom} src={props.src} alt="" />
-    </animated.div>
+    <CSSTransitionGroup
+      transitionName="example"
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={300}>
+      <animated.div style={spring} className="image__container">
+        <img alt="" src={props.src} />
+      </animated.div>
+    </CSSTransitionGroup>
   );
 };
 

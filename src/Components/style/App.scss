@@ -4,23 +4,31 @@
 
 @import "variables";
 
-// NO CLASSES, ONLY ELEMENTS.................except .App xd
 svg {
   overflow: visible;
 }
 html {
   height: 100%;
 }
+
 body {
-  // background-color: #f1f1f1;
-  overflow-x: hidden;
-}
-body {
+  background-color: #cca69a;
+
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
+  color: #231f20;
 }
 
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
 header {
   z-index: 8001;
   display: flex;
@@ -35,14 +43,20 @@ main {
   grid-gap: 10vw;
 
   @include md {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    grid-gap: 2vh;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 30px;
+  }
+
+  @include xl {
+    padding-left: 10vw;
+    padding-right: 10vw;
     grid-gap: 20vh;
     grid-template-columns: 1fr 1fr;
     padding-top: 30px;
   }
-}
-
-.App {
-  height: 100vh;
 }
 
 .treatment__catchphrase {

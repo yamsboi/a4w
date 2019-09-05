@@ -1,7 +1,6 @@
 @import "variables";
 
 .route-active {
-  text-decoration: underline;
   color: black;
 }
 .no-click {
@@ -37,12 +36,11 @@ nav {
     right: 0;
     top: 0;
     opacity: 1;
-    z-index: -1;
+    z-index: 8000;
     position: absolute;
 
     // background: linear-gradient(#ffdde1, #ee9ca7);
-    transition: z-index 250ms step-start,
-      height 250ms cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
+    transition: height 250ms cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
 
     transition-delay: 250ms;
 
@@ -62,7 +60,6 @@ nav {
   }
   .overlay-active {
     position: fixed;
-    z-index: 8000;
     height: 100%;
     transition-delay: 0s;
 

@@ -3,13 +3,13 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import Typography from "../Typography";
 import Image from "../Image";
 import Accordion from "../Accordion/Accordion";
-import { useSpring, useTrail, animated } from "react-spring";
+import { useTrail, animated } from "react-spring";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 
 const FillersRoute = () => {
   const [elementPosition, setElementPosition] = useState();
   const elementRef = useRef();
-  const config = { mass: 5, tension: 2000, friction: 200 };
+  const config = { mass: 1, tension: 300, friction: 25 };
   const words = [
     "Fyll",
     "ut",
@@ -80,7 +80,7 @@ const FillersRoute = () => {
       <div
         ref={elementRef}
         style={{
-          marginTop: `${elementPosition / 5}px`
+          marginTop: `${elementPosition / 6}px`
         }}>
         <Typography type="body">
           Behandlingen ger en omedelbar utfyllnad av rynkor eller konturer i
