@@ -50,7 +50,7 @@ nav {
 
     .wave__before {
       width: 100%;
-      background-color: rgb(255, 164, 164);
+      background-color: #cca69a;
     }
 
     svg {
@@ -71,12 +71,14 @@ nav {
 
   ul {
     top: 20%;
+    left: 0;
     z-index: 9500;
     position: fixed;
     list-style: none;
     padding: 0;
     li {
       display: inline-flex;
+      padding-left: 10px;
 
       // Nav Links
       a {
@@ -130,6 +132,7 @@ nav {
       svg {
         display: block;
       }
+      pointer-events: none;
     }
   }
 

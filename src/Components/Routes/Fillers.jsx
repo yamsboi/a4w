@@ -3,13 +3,12 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import Typography from "../Typography";
 import Image from "../Image";
 import Accordion from "../Accordion/Accordion";
-import { useTrail, animated } from "react-spring";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import posed from "react-pose";
 
 const FillersRoute = () => {
   const [elementPosition, setElementPosition] = useState();
   const elementRef = useRef();
-  const config = { mass: 1, tension: 300, friction: 25 };
   const words = [
     "Fyll",
     "ut",
@@ -22,13 +21,7 @@ const FillersRoute = () => {
     "nedbrytbara",
     "sprutor"
   ];
-  const trail = useTrail(words.length, {
-    config,
-    opacity: 1,
-    x: 0,
-    height: 80,
-    from: { opacity: 0, x: 20, height: 0 }
-  });
+  const sentence = words.map(word => <span>{word}&nbsp;</span>);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -48,6 +41,25 @@ const FillersRoute = () => {
     []
   );
 
+  const P = posed.div({
+    enter: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        y: { type: "spring", stiffness: 1000, damping: 15 },
+        default: { duration: 500 }
+      }
+    },
+    exit: {
+      x: -50,
+      opacity: 0,
+      transition: {
+        y: { type: "spring", stiffness: 1000, damping: 15 },
+        default: { duration: 700 }
+      }
+    }
+  });
+
   return (
     <React.Fragment>
       <div className="treatment__image">
@@ -63,19 +75,10 @@ const FillersRoute = () => {
           src="https://images.pexels.com/photos/1778821/pexels-photo-1778821.jpeg?cs=srgb&dl=attractive-beautiful-beauty-1778821.jpg&fm=jpg"
         />
       </div>
-
       <div className="treatment__catchphrase">
-        <Typography type="headline">
-          {trail.map(({ x, height, ...rest }, index) => (
-            <animated.span
-              key={words[index]}
-              style={{
-                ...rest
-              }}>
-              &nbsp;{words[index]}
-            </animated.span>
-          ))}
-        </Typography>
+        <P>
+          <Typography type="headline">{sentence}</Typography>
+        </P>
       </div>
       <div
         ref={elementRef}

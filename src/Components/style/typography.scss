@@ -47,6 +47,7 @@ a {
   padding-bottom: 5px;
 
   @include md {
+    padding-bottom: 10px;
     font-size: 1.75rem;
   }
 }
@@ -63,11 +64,15 @@ a {
 
 .body {
   -webkit-font-smoothing: antialiased;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.5625;
   font-family: acumin-pro, sans-serif;
   // color: #191919;
   margin: 0;
+
+  @include md {
+    font-size: 24px;
+  }
 }
 
 .stroke {

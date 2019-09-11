@@ -42,6 +42,25 @@ main {
   grid-template-columns: 1fr;
   grid-gap: 10vw;
 
+  aside {
+    display: grid;
+    grid-gap: 2vh;
+    grid-template-columns: 1fr;
+
+    @include md {
+      grid-column: 1 / 3;
+      grid-gap: 2vh;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 30px;
+    }
+
+    @include xl {
+      grid-gap: 20vh;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 30px;
+    }
+  }
+
   @include md {
     padding-left: 2vw;
     padding-right: 2vw;
@@ -79,7 +98,6 @@ main {
 
 .treatment__image {
   grid-column: 1;
-
   display: flex;
   flex-direction: column-reverse;
 

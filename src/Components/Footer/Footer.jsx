@@ -58,43 +58,60 @@ const Footer = () => {
         />
       </svg> */}
       <footer>
-        <div>
-          <p>Sociala Medier</p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <p className="footer_title">Sociala Medier</p>
+              </td>
+              <td>
+                <ul>
+                  {links.map(link => (
+                    <li key={link.text}>
+                      <a href={link.href}>{link.text}</a>
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          </tbody>
 
-          <ul>
-            {links.map(link => (
-              <li key={link.text}>
-                <a href={link.href}>{link.text}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                <p className="footer__title">Sitemap</p>
+              </td>
+              <td>
+                <ul className="footer__sitemap">
+                  {siteMap.map(path => (
+                    <li key={path.path}>
+                      <NavLink exact={path.exact} to={path.path}>
+                        {path.text}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          </tbody>
 
-        <div>
-          <p>Sitemap</p>
-
-          <ul className="footer__sitemap">
-            {siteMap.map(path => (
-              <li key={path.path}>
-                <NavLink exact={path.exact} to={path.path}>
-                  {path.text}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <p>Kontakt</p>
-          <ul>
-            <li>sven.svensson@gmail.se</li>
-            <li>073 123 45 67</li>
-          </ul>
-        </div>
-
-        <div className="copyright">
-          <p>{year} © WebCrafts</p>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                <p className="footer__title">Kontakt</p>
+              </td>
+              <td>
+                <ul>
+                  <li>sven.svensson@gmail.se</li>
+                  <li>073 123 45 67</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="copyright">
+              <td>{year} © WebCrafts</td>
+            </tr>
+          </tbody>
+        </table>
       </footer>
     </React.Fragment>
   );

@@ -61,7 +61,7 @@ function Nav() {
             className="trails-text"
             style={{
               ...rest,
-              transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+              transform: x.interpolate(x => `translate3d(0,-${x}px,0)`)
             }}>
             <animated.div style={{ height }}>
               {links[index].type === "NavLink" ? (

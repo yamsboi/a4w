@@ -18,15 +18,15 @@ function Accordion({ children }) {
   }
 
   return (
-    <table className="accordion">
-      <tbody>
+    <div className="accordion">
+      <div>
         {React.Children.map(children, (child, i) => (
-          <tr
+          <div
             className={`accordion__section ${
               activeItem === i ? "accordion__active" : ""
             }`}
             key={i}>
-            <button className="accordion__button" onClick={() => setItem(i)}>
+            <div className="accordion__button" onClick={() => setItem(i)}>
               <Typography type="subhead">{child.props.title}</Typography>
               <Chevron
                 className={
@@ -37,8 +37,8 @@ function Accordion({ children }) {
                 width={10}
                 fill={"#000"}
               />
-            </button>
-            <td
+            </div>
+            <div
               ref={content}
               className="accordion__content"
               style={{
@@ -46,11 +46,11 @@ function Accordion({ children }) {
                   activeItem === i ? `${content.current.scrollHeight}px` : "0px"
               }}>
               {child}
-            </td>
-          </tr>
+            </div>
+          </div>
         ))}
-      </tbody>
-    </table>
+      </div>
+    </div>
   );
 }
 

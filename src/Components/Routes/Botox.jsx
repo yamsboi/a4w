@@ -2,13 +2,13 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import Typography from "../Typography";
 import Accordion from "../Accordion/Accordion";
 import Image from "../Image";
+import posed from "react-pose";
 
-import { useTrail, animated } from "react-spring";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-const BotoxRoute = () => {
+
+const BotoxRoute = ({ text, style, key }) => {
   const [elementPosition, setElementPosition] = useState();
   const elementRef = useRef();
-  const config = { mass: 1, tension: 300, friction: 25 };
 
   const words = [
     "Botox",
@@ -29,13 +29,8 @@ const BotoxRoute = () => {
     "fantastiskt",
     "sätt"
   ];
-  const trail = useTrail(words.length, {
-    config,
-    opacity: 1,
-    x: 0,
-    height: 80,
-    from: { opacity: 0, x: 20, height: 0 }
-  });
+
+  const sentence = words.map(word => <span>{word}&nbsp;</span>);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -55,12 +50,31 @@ const BotoxRoute = () => {
     []
   );
 
+  const P = posed.div({
+    enter: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        y: { type: "spring", stiffness: 1000, damping: 15 },
+        default: { duration: 500 }
+      }
+    },
+    exit: {
+      x: -50,
+      opacity: 0,
+      transition: {
+        y: { type: "spring", stiffness: 1000, damping: 15 },
+        default: { duration: 700 }
+      }
+    }
+  });
+
   return (
     <React.Fragment>
-      <div className="treatment__image">
+      <div style={style} key={key} className="treatment__image">
         <Image
           className="image"
-          src="https://photographymag.tn/wp-content/uploads/2017/08/portrait-photography-inspiration-woman-portrait-redhead-joanna-kustra.jpg"
+          src="https://images.pexels.com/photos/2744193/pexels-photo-2744193.jpeg?cs=srgb&dl=attractive-beautiful-beauty-2744193.jpg&fm=jpg"
         />
       </div>
       <div className="treatment__image">
@@ -70,17 +84,9 @@ const BotoxRoute = () => {
         />
       </div>
       <div className="treatment__catchphrase">
-        <Typography type="headline">
-          {trail.map(({ x, height, ...rest }, index) => (
-            <animated.span
-              key={words[index]}
-              style={{
-                ...rest
-              }}>
-              &nbsp;{words[index]}
-            </animated.span>
-          ))}
-        </Typography>
+        <P>
+          <Typography type="headline">{sentence}</Typography>
+        </P>
       </div>
 
       <div

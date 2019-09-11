@@ -1,8 +1,25 @@
 @import "variables";
 
+.footer__title {
+  margin-block-start: 0 !important;
+  font-weight: 400;
+}
+
 footer {
   padding: 5vw 10vw 0 10vw;
-  font-weight: 600;
+  font-size: 18px;
+
+  table {
+    margin: 0;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  div {
+    display: flex;
+  }
 
   ul {
     list-style: none;
@@ -10,11 +27,13 @@ footer {
     padding-bottom: 50px;
 
     li {
-      font-weight: 400;
       padding-top: 5px;
       padding-bottom: 5px;
+      font-weight: 600;
 
       a {
+        font-weight: 600;
+
         padding-top: 5px;
         padding-bottom: 5px;
       }
