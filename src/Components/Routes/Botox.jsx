@@ -1,14 +1,19 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, {
+  // useState,
+  //useRef,
+  //useLayoutEffect,
+  useEffect
+} from "react";
 import Typography from "../Typography";
 import Accordion from "../Accordion/Accordion";
 import Image from "../Image";
 import posed from "react-pose";
 
-import { useScrollPosition } from "../hooks/useScrollPosition";
+// import { useScrollPosition } from "../hooks/useScrollPosition";
 
-const BotoxRoute = ({ text, style, key }) => {
-  const [elementPosition, setElementPosition] = useState();
-  const elementRef = useRef();
+const BotoxRoute = ({ style, key }) => {
+  //const [elementPosition, setElementPosition] = useState();
+  // const elementRef = useRef();
 
   const words = [
     "Botox",
@@ -30,49 +35,61 @@ const BotoxRoute = ({ text, style, key }) => {
     "sätt"
   ];
 
-  const sentence = words.map(word => <span>{word}&nbsp;</span>);
+  const sentence = words.map(word => <span key={word}>{word}&nbsp;</span>);
 
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      setElementPosition(currPos.y.toFixed());
-      // console.log(currPos.y);
-    },
-    [],
-    elementRef,
-    true
-  );
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  //     setElementPosition(currPos.y.toFixed());
+  //     // console.log(currPos.y);
+  //   },
+  //   [],
+  //   elementRef,
+  //   true
+  // );
 
-  useLayoutEffect(
-    () =>
-      setElementPosition(
-        elementRef.current.getBoundingClientRect().y.toFixed()
-      ),
-    []
-  );
+  // useLayoutEffect(
+  //   () =>
+  //     setElementPosition(
+  //       elementRef.current.getBoundingClientRect().y.toFixed()
+  //     ),
+  //   []
+  // );
+
+  useEffect(() => {
+    console.log("Botox mounted");
+  }, []);
 
   const P = posed.div({
     enter: {
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 1000, damping: 15 },
         default: { duration: 500 }
       }
     },
     exit: {
-      x: -50,
+      y: -50,
       opacity: 0,
       transition: {
-        y: { type: "spring", stiffness: 1000, damping: 15 },
         default: { duration: 700 }
       }
     }
   });
 
+  const Fade = posed.div({
+    enter: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0
+    }
+  });
+
   return (
     <React.Fragment>
-      <div style={style} key={key} className="treatment__image">
+      <div style={style} className="treatment__image">
         <Image
+          transition={true}
           className="image"
           src="https://images.pexels.com/photos/2744193/pexels-photo-2744193.jpeg?cs=srgb&dl=attractive-beautiful-beauty-2744193.jpg&fm=jpg"
         />
@@ -89,11 +106,12 @@ const BotoxRoute = ({ text, style, key }) => {
         </P>
       </div>
 
-      <div
-        ref={elementRef}
-        style={{
-          transform: `translateY(${elementPosition / 5}px)`
-        }}>
+      <Fade
+      // ref={elementRef}
+      // style={{
+      //   transform: `translateY(${elementPosition / 5}px)`
+      // }}
+      >
         <Typography type="body">
           Botulinumtoxin är ett kraftigt muskelförlamande ämne som har använts
           inom medicinen sedan 1970-talet i många olika sammanhang. Sedan mer än
@@ -105,7 +123,7 @@ const BotoxRoute = ({ text, style, key }) => {
           yngre patienter. Behandlingen är snabb, tämligen smärtfri och tar inte
           mer än några minuter att utföra.
         </Typography>
-      </div>
+      </Fade>
       <div className="treatment__accordion">
         <Accordion>
           <div title="Före behandling">

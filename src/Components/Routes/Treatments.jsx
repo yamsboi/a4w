@@ -10,18 +10,21 @@ const pages = [
   {
     name: "Botox",
     id: "botox",
-    component: BotoxRoute
+    component: <BotoxRoute />
   },
   {
     name: "Fillers",
     id: "fillers",
-    component: FillersRoute
+    component: <FillersRoute />
   }
 ];
 
-function Page({ match, ...props }) {
+function Page({ match }) {
   const page = pages.find(({ id }) => id === match.params.pageID);
-  return <page.component {...props} />;
+  console.log(match);
+  console.log(page.component);
+
+  return page.component;
 }
 
 function Treatments({ match }) {
@@ -42,7 +45,7 @@ function Treatments({ match }) {
 
   return (
     <Route
-      render={({ location }) => (
+      render={({ match, location }) => (
         <React.Fragment>
           <PoseGroup>
             <RoutesContainer key={location.key}>
@@ -75,8 +78,9 @@ function Treatments({ match }) {
 
               <Switch location={location}>
                 <Route
+                  key={match.url}
                   path={`${match.path}/:pageID`}
-                  render={routeProps => <Page {...routeProps} text=" -" />}
+                  component={Page}
                 />
               </Switch>
             </RoutesContainer>

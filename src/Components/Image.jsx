@@ -23,10 +23,14 @@ const ImgContainer = posed.img({
   }
 });
 
-function Image({ src }) {
-  return (
+function Image({ src, transition }) {
+  return transition ? (
     <div className="image__container">
-      <ImgContainer src={src} />
+      <ImgContainer alt="" src={src} />
+    </div>
+  ) : (
+    <div className="image__container">
+      <img alt="" src={src} />
     </div>
   );
 }

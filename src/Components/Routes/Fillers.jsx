@@ -1,14 +1,16 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, {
+  /* useState, useRef, useLayoutEffect, */ useEffect
+} from "react";
 
 import Typography from "../Typography";
 import Image from "../Image";
 import Accordion from "../Accordion/Accordion";
-import { useScrollPosition } from "../hooks/useScrollPosition";
+// import { useScrollPosition } from "../hooks/useScrollPosition";
 import posed from "react-pose";
 
 const FillersRoute = () => {
-  const [elementPosition, setElementPosition] = useState();
-  const elementRef = useRef();
+  // const [elementPosition, setElementPosition] = useState();
+  // const elementRef = useRef();
   const words = [
     "Fyll",
     "ut",
@@ -21,42 +23,53 @@ const FillersRoute = () => {
     "nedbrytbara",
     "sprutor"
   ];
-  const sentence = words.map(word => <span>{word}&nbsp;</span>);
+  const sentence = words.map(word => <span key={word}>{word}&nbsp;</span>);
 
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      setElementPosition(currPos.y.toFixed());
-      console.log(currPos.y);
-    },
-    [],
-    elementRef,
-    true
-  );
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  //     setElementPosition(currPos.y.toFixed());
+  //     console.log(currPos.y);
+  //   },
+  //   [],
+  //   elementRef,
+  //   true
+  // );
 
-  useLayoutEffect(
-    () =>
-      setElementPosition(
-        elementRef.current.getBoundingClientRect().y.toFixed()
-      ),
-    []
-  );
+  // useLayoutEffect(
+  //   () =>
+  //     setElementPosition(
+  //       elementRef.current.getBoundingClientRect().y.toFixed()
+  //     ),
+  //   []
+  // );
+
+  useEffect(() => {
+    console.log("Fillers mounted");
+  }, []);
 
   const P = posed.div({
     enter: {
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 1000, damping: 15 },
         default: { duration: 500 }
       }
     },
     exit: {
-      x: -50,
+      y: -50,
       opacity: 0,
       transition: {
-        y: { type: "spring", stiffness: 1000, damping: 15 },
         default: { duration: 700 }
       }
+    }
+  });
+
+  const Fade = posed.div({
+    enter: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0
     }
   });
 
@@ -64,6 +77,7 @@ const FillersRoute = () => {
     <React.Fragment>
       <div className="treatment__image">
         <Image
+          transition={true}
           className="image"
           src="https://images.pexels.com/photos/1264442/pexels-photo-1264442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         />
@@ -80,11 +94,12 @@ const FillersRoute = () => {
           <Typography type="headline">{sentence}</Typography>
         </P>
       </div>
-      <div
-        ref={elementRef}
-        style={{
-          marginTop: `${elementPosition / 6}px`
-        }}>
+      <Fade
+      // ref={elementRef}
+      // style={{
+      //   marginTop: `${elementPosition / 6}px`
+      // }}
+      >
         <Typography type="body">
           Behandlingen ger en omedelbar utfyllnad av rynkor eller konturer i
           ditt ansikte. Vi använder oss av gelen Restylane/Juvederm för att
@@ -96,7 +111,7 @@ const FillersRoute = () => {
           reducera och släta ut ansiktslinjer, rynkor och veck men även skapa
           tydligare definition av munnen och ansiktsformen.
         </Typography>
-      </div>
+      </Fade>
       <div className="treatment__accordion">
         <Accordion>
           <div title="Före behandling">

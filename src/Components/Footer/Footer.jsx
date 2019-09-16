@@ -62,7 +62,7 @@ const Footer = () => {
           <tbody>
             <tr>
               <td>
-                <p className="footer_title">Sociala Medier</p>
+                <p className="footer__title">Sociala Medier</p>
               </td>
               <td>
                 <ul>
@@ -74,9 +74,7 @@ const Footer = () => {
                 </ul>
               </td>
             </tr>
-          </tbody>
 
-          <tbody>
             <tr>
               <td>
                 <p className="footer__title">Sitemap</p>
@@ -93,24 +91,32 @@ const Footer = () => {
                 </ul>
               </td>
             </tr>
-          </tbody>
-
-          <tbody>
             <tr>
               <td>
                 <p className="footer__title">Kontakt</p>
               </td>
               <td>
                 <ul>
-                  <li>sven.svensson@gmail.se</li>
-                  <li>073 123 45 67</li>
+                  <li>
+                    <a
+                      href="mailto:sven.svensson@gmail.com?Subject=Företagets%20namn"
+                      target="_top">
+                      sven.svensson@gmail.se
+                    </a>
+                  </li>
+                  <li>
+                    <a href="tel:073-123-45-67">073 123 45 67</a>
+                  </li>
                 </ul>
               </td>
             </tr>
+          </tbody>
+
+          <tfoot>
             <tr className="copyright">
               <td>{year} © WebCrafts</td>
             </tr>
-          </tbody>
+          </tfoot>
         </table>
       </footer>
     </React.Fragment>
