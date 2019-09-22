@@ -26,6 +26,10 @@
   &:hover {
     background-color: transparent;
   }
+
+  .accordion__content {
+    padding-bottom: 10px;
+  }
 }
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion__button {

@@ -8,6 +8,7 @@ const ImgContainer = posed.img({
   enter: {
     scale: 1,
     opacity: 1,
+    delay: 100,
     transition: {
       y: { type: "spring", stiffness: 1000, damping: 15 },
       default: { duration: 500 }
@@ -18,19 +19,19 @@ const ImgContainer = posed.img({
     opacity: 0,
     transition: {
       y: { type: "spring", stiffness: 1000, damping: 15 },
-      default: { duration: 700 }
+      default: { duration: 300 }
     }
   }
 });
 
 function Image({ src, transition }) {
-  return transition ? (
+  return (
     <div className="image__container">
-      <ImgContainer alt="" src={src} />
-    </div>
-  ) : (
-    <div className="image__container">
-      <img alt="" src={src} />
+      {transition ? (
+        <ImgContainer alt="" src={src} />
+      ) : (
+        <img alt="" src={src} />
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { useScrollPosition } from "./hooks/useScrollPosition";
 import { useSpring, animated } from "react-spring";
+import { NavLink } from "react-router-dom";
 
 import "./style/card.scss";
 import Image from "./Image";
@@ -31,7 +32,6 @@ function Card(props) {
       setElementPosition(
         elementRef.current.getBoundingClientRect().top.toFixed() / 2
       ),
-
     []
   );
 
@@ -54,18 +54,25 @@ function Card(props) {
         ref={elementRef}
         className="card__title"
         style={
-          (sweep, { transform: `translate( ${elementPosition / 3}px, -50% )` })
+          (sweep,
+          { transform: `translate3d( ${elementPosition / 3}px, -50%, 0 )` })
         }>
         {props.title}
       </div>
 
-      <section className="top">
-        <Image src={props.img} />
-      </section>
+      <NavLink className="card-container" to={props.to}>
+        <figure>
+          <Image src={props.img} />
+        </figure>
 
-      <animated.section style={opacity} className="bottom">
-        {props.children}
-      </animated.section>
+        <animated.article style={opacity}>
+          {props.children}{" "}
+          <div className="card__arrow">
+            <div></div>
+            <div></div>
+          </div>
+        </animated.article>
+      </NavLink>
     </animated.div>
   );
 }

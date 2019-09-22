@@ -15,6 +15,8 @@ function Nav() {
     toggle(false);
   }
 
+  const companyName = "Nika";
+
   const links = [
     {
       to: "/",
@@ -46,7 +48,7 @@ function Nav() {
 
   return (
     <nav>
-      <Header text="A4W" />
+      <Header text={companyName} />
 
       <Hamburger state={state} toggle={toggle} />
 
@@ -58,7 +60,6 @@ function Nav() {
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.li
             key={links[index].label}
-            className="trails-text"
             style={{
               ...rest,
               transform: x.interpolate(x => `translate3d(0,-${x}px,0)`)

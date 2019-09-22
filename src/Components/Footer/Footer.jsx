@@ -46,17 +46,6 @@ const siteMap = [
 const Footer = () => {
   return (
     <React.Fragment>
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-        style={{ transform: "translateY(1px)" }}>
-        <path
-          fill="#fea4a4"
-          fillOpacity="1"
-          d="M0,32L60,37.3C120,43,240,53,360,85.3C480,117,600,171,720,197.3C840,224,960,224,1080,218.7C1200,213,1320,203,1380,197.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        />
-      </svg> */}
       <footer>
         <table>
           <tbody>
@@ -114,7 +103,7 @@ const Footer = () => {
 
           <tfoot>
             <tr className="copyright">
-              <td>{year} © WebCrafts</td>
+              <td>{year} © Ermilin</td>
             </tr>
           </tfoot>
         </table>

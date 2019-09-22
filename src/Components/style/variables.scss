@@ -27,42 +27,26 @@ $hamburger-size: 68px;
 // FOOTER
 $footer-height: 300px;
 
-//MIXINS//MIXINS //MIXINS //MIXINS //MIXINS //MIXINS //MIXINS
-
-// Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
     @content;
   }
 }
 
-// Medium devices
 @mixin md {
   @media (min-width: #{$screen-md-min}) {
     @content;
   }
 }
 
-// Large devices
 @mixin lg {
   @media (min-width: #{$screen-lg-min}) {
     @content;
   }
 }
 
-// Extra large devices
 @mixin xl {
   @media (min-width: #{$screen-xl-min}) {
     @content;
-  }
-}
-
-@keyframes nudge {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(5px, 0);
   }
 }

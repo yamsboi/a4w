@@ -36,7 +36,7 @@ function Treatments({ match }) {
     to: { opacity: 1, x: 0, height: "auto" }
   });
 
-  const RoutesContainer = posed.aside({
+  const RoutesContainer = posed.div({
     enter: {
       beforeChildren: true
     },
@@ -45,47 +45,47 @@ function Treatments({ match }) {
 
   return (
     <Route
-      render={({ match, location }) => (
-        <React.Fragment>
-          <PoseGroup>
-            <RoutesContainer key={location.key}>
-              <ul className="treatments__links">
-                {trail.map(({ x, height, ...rest }, index) => (
-                  <a.li key={pages[index].id}>
-                    <NavLink to={`${match.url}/${pages[index].id}`}>
-                      <svg
-                        style={{ width: "10vw", height: "10vw" }}
-                        viewBox="0 0 24 24">
-                        <path
-                          fill="#000000"
-                          d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
-                        />
-                      </svg>
+      render={({ location }) => (
+        <PoseGroup>
+          <RoutesContainer
+            className="treatments__container"
+            key={location.pathname}>
+            <ul className="treatments__links">
+              {trail.map(({ x, height, ...rest }, index) => (
+                <a.li key={pages[index].id}>
+                  <NavLink to={`${match.url}/${pages[index].id}`}>
+                    <svg
+                      style={{
+                        width: "10vw",
+                        height: "10vw"
+                      }}
+                      viewBox="0 0 24 24">
+                      <path
+                        fill="#000000"
+                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
+                      />
+                    </svg>
+                    <a.h1
+                      style={{
+                        ...rest,
+                        transform: x.interpolate(x => `translate(-${x}px,0px)`)
+                      }}>
+                      {pages[index].name}
+                    </a.h1>
+                  </NavLink>
+                </a.li>
+              ))}
+            </ul>
 
-                      <a.h1
-                        style={{
-                          ...rest,
-                          transform: x.interpolate(
-                            x => `translate(-${x}px,0px)`
-                          )
-                        }}>
-                        {pages[index].name}
-                      </a.h1>
-                    </NavLink>
-                  </a.li>
-                ))}
-              </ul>
-
-              <Switch location={location}>
-                <Route
-                  key={match.url}
-                  path={`${match.path}/:pageID`}
-                  component={Page}
-                />
-              </Switch>
-            </RoutesContainer>
-          </PoseGroup>
-        </React.Fragment>
+            <Switch location={location}>
+              <Route
+                key={location.pathname}
+                path={`${match.path}/:pageID`}
+                component={Page}
+              />
+            </Switch>
+          </RoutesContainer>
+        </PoseGroup>
       )}
     />
   );

@@ -1,19 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Literata:400,500,600,700&display=swap");
-
 @import url("https://use.typekit.net/pmp2upa.css");
 
 @import "variables";
 
-svg {
-  overflow: visible;
-}
 html {
   height: 100%;
+}
+*::selection {
+  background: black;
+  color: white;
+}
+
+hr {
+  border-color: #231f20;
+  border-style: solid;
 }
 
 body {
   background-color: #cca69a;
-
   margin: 0;
   padding: 0;
   width: 100%;
@@ -21,14 +25,18 @@ body {
   color: #231f20;
 }
 
-.example-appear {
-  opacity: 0.01;
+.privacy {
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  background: yellow;
+  padding: 20px;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
 }
 
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity 0.5s ease-in;
-}
 header {
   z-index: 8001;
   display: flex;
@@ -42,39 +50,42 @@ main {
   grid-template-columns: 1fr;
   grid-gap: 10vw;
 
-  aside {
-    display: grid;
-    grid-gap: 2vh;
-    grid-template-columns: 1fr;
-
-    @include md {
-      grid-column: 1 / 3;
-      grid-gap: 2vh;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 30px;
-    }
-
-    @include xl {
-      grid-gap: 20vh;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 30px;
-    }
-  }
-
   @include md {
     padding-left: 2vw;
     padding-right: 2vw;
     grid-gap: 2vh;
     grid-template-columns: 1fr 1fr;
     padding-top: 30px;
+    padding-bottom: 0;
   }
 
   @include xl {
     padding-left: 10vw;
     padding-right: 10vw;
-    grid-gap: 20vh;
+    grid-gap: 10vh;
     grid-template-columns: 1fr 1fr;
     padding-top: 30px;
+  }
+}
+
+.treatments__container {
+  display: grid;
+  grid-gap: 2vh;
+  grid-template-columns: 1fr;
+
+  @include md {
+    grid-column: 1 / 3;
+    grid-gap: 2vh;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 30px;
+  }
+
+  @include lg {
+    grid-gap: 10vh;
+  }
+
+  @include xl {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -83,7 +94,7 @@ main {
   flex-direction: column-reverse;
   align-self: end;
   grid-row: 2;
-  height: 46vw;
+  height: 60vw;
 
   @include md {
     grid-row: 2;
@@ -93,6 +104,11 @@ main {
   h2 {
     display: flex;
     flex-wrap: wrap;
+    line-height: 8vw;
+
+    @include md {
+      line-height: 2.5rem;
+    }
   }
 }
 
@@ -113,8 +129,17 @@ main {
   }
 }
 
+.treatment__info {
+  grid-row: 4;
+
+  @include md {
+    grid-row: auto;
+  }
+}
+
 .treatment__accordion {
   grid-column: 1;
+  margin-top: 50px;
 
   @include md {
     min-height: 338px;

@@ -12,9 +12,9 @@ import Footer from "./Footer/Footer.jsx";
 import "./style/App.scss";
 
 const App = () => (
-  <div className="App">
+  <>
+    <Nav />
     <ScrollToTop>
-      <Nav />
       <main>
         <Switch>
           <Route path="/" exact component={Index} title="Home" />
@@ -22,10 +22,10 @@ const App = () => (
           <Route component={HTTP404} />
         </Switch>
       </main>
-
-      <Footer />
     </ScrollToTop>
-  </div>
+
+    <Footer />
+  </>
 );
 
 export default App;
